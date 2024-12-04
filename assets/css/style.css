@@ -23,6 +23,16 @@ html, body {
     justify-self: center;
     border-radius: 30%;
 }
+#selectedCard{ 
+    visibility: hidden;
+    width: 8em; /* or appropriate size */
+    height: 8em;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
 
 
 #gameboard-container{
@@ -81,6 +91,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height:100%; 
+    width:100%; 
     background-color: #4b3a3a0f;
     background-image: url(/assets/images/board/grid.png);
     background-size: cover;
@@ -117,4 +129,118 @@ html, body {
     z-index: 99;
     backdrop-filter: blur(5px);
     display: none; 
+}
+
+
+button {
+    padding: 10px 20px;
+    background-image: linear-gradient(144deg,#5a070753, #fafcff 50%,#5663b729);
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s;
+    
+}
+
+button:hover {
+    background-image: linear-gradient(144deg,#5a0707a3, #fafcff 50%,#5663b786);
+}
+
+
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    #gameboard {
+        grid-template-columns: repeat(6, 60px); /* Reduce tile size */
+        grid-template-rows: repeat(5, 60px);
+        gap: 6px; /* Smaller gap */
+    }
+
+    #cardboard {
+        grid-template-columns: repeat(5, 60px);
+        grid-template-rows: repeat(5, 60px);
+        gap: 6px;
+    }
+
+    .c-tiles, .b-tiles {
+        width: 100%;
+        height: 100%;
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .logo {
+        height: 80px; /* Adjust logo size */
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .bottom-panel {
+        gap: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #gameboard {
+        grid-template-columns: repeat(6, 100px);
+        grid-template-rows: repeat(5, 100px);
+        gap: 8px;
+    }
+
+    #cardboard {
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(5, 100px);
+        min-height:400px; 
+        
+    }
+
+    .c-tiles, .b-tiles {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+
+
+    .logo {
+        height: 100px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #gameboard {
+        grid-template-columns: repeat(6, 120px);
+        grid-template-rows: repeat(5, 120px);
+        gap: 10px;
+    }
+
+    #cardboard {
+        grid-template-columns: repeat(5, 120px);
+        grid-template-rows: repeat(5, 120px);
+        min-height:400px; 
+        
+    }
+
+    .c-tiles, .b-tiles {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+
+
+   
+    button {
+        font-size: 16px;
+    }
 }
