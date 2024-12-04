@@ -1,3 +1,8 @@
+let pickcard = document.getElementById("pickcard");
+let cardboard = document.getElementById("cardboard")
+let hidecards = document.getElementById("hidecards")
+let overlay = document.getElementById("overlay")
+
 
 const rows = 5;
 const cols = 6;
@@ -11,6 +16,13 @@ for (let row = 0; row < rows; row++) {
     }
 }
 
+
+pickcard.addEventListener("click", () => {
+    overlay.style.display = "block"; // Visa overlay
+    cardboard.style.display = "grid"; 
+    hidecards.style.display = "inline"; 
+    
+});
 
 
 
