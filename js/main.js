@@ -1,6 +1,6 @@
 import  {pickCard, pickCastle, cardBoard, castleBoard, hideCards, overlay, closeCard, closeCastle, gameBoard, selected} from "./DOMs.js";
 import { cards, shuffleCards } from "./cards.js";
-import { renderBoard } from "./render.js";
+import { renderBoard, renderCards } from "./render.js";
 
 
 const rows = 5;
@@ -26,14 +26,6 @@ for (let row = 0; row < c_rows; row++) {
         c_board[row][col] = null;
     }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -105,7 +97,7 @@ function setupBoardPlacement() {
 
 renderBoard(gameBoard, rows, cols);
 shuffleCards(c_board, c_rows, c_cols);
-renderCards();
+renderCards(cardBoard, c_rows, c_cols, closeCard);
 setupCardSelection();
 setupBoardPlacement();
 

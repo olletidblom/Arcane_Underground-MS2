@@ -14,3 +14,19 @@ export function renderBoard(gameBoard, rows, cols) {
     }
     console.log("Game board rendered");
 }
+
+export function renderCards(cardBoard, c_rows, c_cols, closeCard) {
+    cardBoard.innerHTML = "";
+    for (let row = 0; row < c_rows; row++) {
+        for (let col = 0; col < c_cols; col++) {
+            const c_tile = document.createElement("div");
+            c_tile.classList.add("c-tiles");
+            c_tile.dataset.row = row;
+            c_tile.dataset.col = col;
+            cardBoard.appendChild(c_tile);
+        }
+    }
+    cardBoard.appendChild(closeCard)
+
+    console.log("Cards rendered");
+}
