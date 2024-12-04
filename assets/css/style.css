@@ -22,6 +22,15 @@
     gap: 10px; /* Add more spacing between cards */
 }
 
+#castleboard { 
+    display:grid; 
+    justify-content: center;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(1, 120px);
+    gap:10px; 
+}
+
+
 .b-tiles{ 
     border: 2px solid black;
     width: 100%;  /* Takes full grid cell width */

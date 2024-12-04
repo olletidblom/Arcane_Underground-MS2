@@ -1,7 +1,12 @@
 let pickcard = document.getElementById("pickcard");
+let pickcastle = document.getElementById("pickcastle")
 let cardboard = document.getElementById("cardboard")
+let castleboard = document.getElementById("castleboard")
 let hidecards = document.getElementById("hidecards")
 let overlay = document.getElementById("overlay")
+let closecard = document.getElementById("closecard")
+let closecastle = document.getElementById("closecastle")
+
 
 
 const rows = 5;
@@ -18,11 +23,25 @@ for (let row = 0; row < rows; row++) {
 
 
 pickcard.addEventListener("click", () => {
-    overlay.style.display = "block"; // Visa overlay
-    cardboard.style.display = "grid"; 
-    hidecards.style.display = "inline"; 
-    
+    cardboard.style.display = "grid";   
 });
+
+pickcastle.addEventListener("click", () => { 
+    castleboard.style.display="grid"; 
+})
+
+
+closecard.addEventListener("click", () => {
+
+        cardboard.style.display = "none"; 
+ 
+});
+
+closecastle.addEventListener("click", () => {
+    castleboard.style.display = "none"; 
+});
+
+
 
 
 
