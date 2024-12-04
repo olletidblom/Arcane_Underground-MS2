@@ -1,3 +1,28 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e2e;
+    background-image: url(/assets/images/board/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+#logo{
+    background-image: url(/assets/images/logo/logo2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height:100px;
+    margin-top:20px;
+    margin-bottom:30px;
+    width:30%;
+    justify-self: center;
+    border-radius: 30%;
+}
 
 
 #gameboard-container{
@@ -20,6 +45,16 @@
     grid-template-columns: repeat(5, 120px); /* Adjust size for larger cards */
     grid-template-rows: repeat(5, 120px); /* Adjust rows for larger cards */
     gap: 10px; /* Add more spacing between cards */
+    display: grid;
+    justify-content: center; /* Center the grid within the popup */
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px; /* Increase padding for better spacing */
+    z-index: 100; /* Place above everything */
+    display: none; /* Hidden by default */
+    overflow: hidden; 
 }
 
 #castleboard { 
@@ -28,27 +63,38 @@
     grid-template-columns: repeat(4, 120px);
     grid-template-rows: repeat(1, 120px);
     gap:10px; 
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px; /* Increase padding for better spacing */
+    z-index: 100; /* Place above everything */
+    display: none; /* Hidden by default */
+    overflow: hidden; 
+
 }
+
 
 
 .b-tiles{ 
-    border: 2px solid black;
-    width: 100%;  /* Takes full grid cell width */
-    height: 100%; /* Takes full grid cell height */
-    background-color: lightgray; /* Optional: Background color for tiles */
+    border: 2px solid #333;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background-color: #4b3a3a0f;
+    background-image: url(/assets/images/board/grid.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .c-tiles{ 
-    border: 2px solid black;
-    width: 100%;  /* Takes full grid cell width */
-    height: 100%; /* Takes full grid cell height */
-    background-color: rgb(255, 0, 0); /* Optional: Background color for tiles */
+    border: 2px solid #333; /* Thicker border for emphasis */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url(/assets/images/tiles/tile_background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer; /* Show pointer to indicate clickability */
+    transition: transform 0.2s ease-in-out; /* Add animation */
 }
 
 .bottom-panel{
@@ -59,4 +105,16 @@
     gap:20px;
     margin-top:20px;
     
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    backdrop-filter: blur(5px);
+    display: none; 
 }

@@ -23,22 +23,27 @@ for (let row = 0; row < rows; row++) {
 
 
 pickcard.addEventListener("click", () => {
-    cardboard.style.display = "grid";   
+    cardboard.style.display = "grid";  
+    overlay.style.display = "inline";
+
 });
 
 pickcastle.addEventListener("click", () => { 
     castleboard.style.display="grid"; 
+    overlay.style.display = "inline"
 })
 
 
 closecard.addEventListener("click", () => {
 
         cardboard.style.display = "none"; 
+        overlay.style.display = "none"
  
 });
 
 closecastle.addEventListener("click", () => {
     castleboard.style.display = "none"; 
+    overlay.style.display = "none"
 });
 
 
