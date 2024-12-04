@@ -1,0 +1,10 @@
+export let pickCard = document.getElementById("pickcard");
+export let pickCastle = document.getElementById("pickcastle")
+export let cardBoard = document.getElementById("cardboard")
+export let castleBoard = document.getElementById("castleboard")
+export let hideCards = document.getElementById("hidecards")
+export let overlay = document.getElementById("overlay")
+export let closeCard = document.getElementById("closecard")
+export let closeCastle = document.getElementById("closecastle")
+export let gameBoard = document.getElementById("gameboard")
+export const selected = document.getElementById("selectedCard"); 
