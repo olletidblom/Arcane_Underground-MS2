@@ -1,0 +1,25 @@
+#gameboard-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 30px;
+}
+
+#gameboard{
+    display: grid;
+    grid-template-columns: repeat(6, 120px); 
+    grid-template-rows: repeat(5, 120px);  
+    gap: 10px;
+    background-color: #09120a7e;
+    border:6px solid black; 
+}
+
+.b-tiles{ 
+    border: 2px solid black;
+    width: 100%;  /* Takes full grid cell width */
+    height: 100%; /* Takes full grid cell height */
+    background-color: lightgray; /* Optional: Background color for tiles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
