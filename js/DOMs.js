@@ -20,4 +20,4 @@ export const startGameBtn = document.getElementById("start-game-play-btn");
 export const playerTurn = document.getElementById("playerTurn"); 
 export const playerRoundScore = document.getElementById("player-round-score"); 
 export const round = document.getElementById("round"); 
-export const totalScore = document.getElementById("total-score")
+export const totalScore = document.getElementById("total-score");

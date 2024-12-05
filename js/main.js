@@ -49,12 +49,12 @@ function startGame(players) {
     playerRoundScore.innerText =`Score: ${players[0].score}`
 
     // Start the game loop
-    startGameLoop(gameState);
+    startGameLoop(gameState, c_board, cardBoard, closeCard);
 }
 
 // Modify game loop
 
-function startGameLoop(gameState) {
+function startGameLoop(gameState, c_board, cardBoard, closeCard) {
     let round = 1; // Track the current round
 
     const interval = setInterval(() => {
@@ -69,7 +69,7 @@ function startGameLoop(gameState) {
                     round += 1;
 
                     // Reset the board for the next round
-                    resetBoard(gameState);
+                    resetBoard(gameState, c_board, cardBoard, closeCard);
 
                     // Update the round display
                     document.getElementById("round").innerText = `Round: ${round}`;
@@ -110,12 +110,15 @@ function endRound(gameState, onNextRound) {
     }, 100); // Add a slight delay to ensure the alert works correctly
 }
 
-function resetBoard(gameState) {
+function resetBoard(gameState, c_board, cardBoard, closeCard) {
     // Clear the board
     gameState.board.forEach(row => row.fill(null));
+   
 
     // Re-render the board (if necessary)
     renderBoard(gameBoard, gameState.board.length, gameState.board[0].length);
+    shuffleCards(c_board, c_rows, c_cols);
+    renderCards(cardBoard, c_rows, c_cols, closeCard);
 
      // Update the total scores and round score displays
      const totalScores = gameState.players.map(player => `${player.name}: ${player.totalscore}`).join('<br>');
