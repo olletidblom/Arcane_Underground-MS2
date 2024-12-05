@@ -7,4 +7,4 @@ export let overlay = document.getElementById("overlay")
 export let closeCard = document.getElementById("closecard")
 export let closeCastle = document.getElementById("closecastle")
 export let gameBoard = document.getElementById("gameboard")
-export const selected = document.getElementById("selectedCard"); 
+export const selectedDOM = document.getElementById("selectedCard"); 
