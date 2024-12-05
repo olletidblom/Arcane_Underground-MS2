@@ -87,7 +87,7 @@ export function place_Card(gameState, board, selectedDOM, castleBoard, overlay) 
 
                 console.log(`${gameState.players[gameState.currentPlayerIndex].name} placed an item.`);
                 calculateScores(gameState);
-
+                console.log(board)
                 // Clear the selected item
                 gameState.selected = null;
 
