@@ -1,4 +1,4 @@
-
+// Show cards button
 export function showCards(pickCard, cardBoard, overlay) {
     pickCard.addEventListener("click", () => {
         cardBoard.style.display = "grid";
@@ -6,14 +6,14 @@ export function showCards(pickCard, cardBoard, overlay) {
 
     })
 };
-
+// Show castles button
 export function showCastles(pickCastle, castleBoard, overlay) {
     pickCastle.addEventListener("click", () => {
         castleBoard.style.display = "grid";
         overlay.style.display = "inline"
     })
 };
-
+// Close cards button
 export function closeCards(closeCard, cardBoard, overlay) {
     closeCard.addEventListener("click", () => {
         cardBoard.style.display = "none";
@@ -22,7 +22,7 @@ export function closeCards(closeCard, cardBoard, overlay) {
     })
 };
 
-
+// Close castles button
 export function closeCastles(closeCastle, castleBoard, overlay) {
     closeCastle.addEventListener("click", () => {
         castleBoard.style.display = "none";

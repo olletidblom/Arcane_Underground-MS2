@@ -1,3 +1,4 @@
+// Cards Array
 export const cards = [
     { image: "url(/assets/images/tiles/+6_1.png", name: "Knight", value: 6 },
     { image: "url(/assets/images/tiles/+6_2.png", name: "Knight", value: 6 },
@@ -23,7 +24,7 @@ export const cards = [
     { image: "url(/assets/images/tiles/mountain.png", name: "Mountain", value: null, effect: "mountain" }
 ];
 
-
+// Function to shuffle the cards
 export function shuffleCards(c_board, c_rows, c_cols) {
     let shuffledCards = [...cards]; 
     shuffledCards = shuffledCards.sort(() => Math.random() - 0.5);
