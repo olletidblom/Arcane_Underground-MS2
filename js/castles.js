@@ -22,9 +22,9 @@ export const castles = {
 };
 
 
-export function render_Castles(gameState, castleBoard, overlay) {
+export function render_Castles(gameState, castleBoard) {
     const currentPlayer = gameState.players[gameState.currentPlayerIndex];
-    const playerCastles = currentPlayer.castles; // Get castles for current player
+    let playerCastles = currentPlayer.castles; // Get castles for current player
 
     // Clear the castle board before rendering new data
     castleBoard.innerHTML = "";

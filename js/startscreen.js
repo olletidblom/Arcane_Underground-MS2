@@ -65,5 +65,7 @@ function setupPlayerForm(numPlayers, startGameCallback) {
         });
 
         startGameCallback(players); // Pass the players to the game
+        document.getElementById("logo").style.display="none"; 
+        document.getElementById("turn-info").style.display="inline";
     });
 }

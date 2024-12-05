@@ -1,3 +1,4 @@
+import { applyDragonEffect, applyGoldmineEffect, applyMountainEffect } from "./specialCard.js";
 
 
 
@@ -55,7 +56,7 @@ export function select_Card(gameState, c_board, selectedDOM, cardBoard, overlay)
 }
 
 // Place selected card on board function
-export function place_Card(gameState, board, selectedDOM) {
+export function place_Card(gameState, board, selectedDOM, castleBoard, overlay) {
     const boardTiles = document.querySelectorAll(".b-tiles");
     boardTiles.forEach(tile => {
         tile.addEventListener("click", () => {
@@ -94,11 +95,13 @@ export function place_Card(gameState, board, selectedDOM) {
                 gameState.currentPlayerIndex = (gameState.currentPlayerIndex + 1) % gameState.players.length;
 
                 document.getElementById("playerTurn").innerText = `${gameState.players[gameState.currentPlayerIndex].name}'s Turn`;
+                
             } else {
                 alert("No item selected to place.");
             }
         });
     });
+    
 }
 
 export function calculateScores(gameState) {
@@ -111,62 +114,81 @@ export function calculateScores(gameState) {
 
     // Calculate scores for rows
     for (let row = 0; row < rows; row++) {
-        let rowScore = 0;
-        let rowCastles = [];
-       
+        const rowCells = board[row];
+        const segments = applyMountainEffect(rowCells); // Split row into segments
 
-        // Collect row data
-        const rowCells = [];
-        for (let col = 0; col < cols; col++) {
-            const cell = board[row][col];
-            if (cell) {
-                rowCells.push(cell);
-              
-                if (cell.castleOwner) {
-                    rowCastles.push(cell);
+        // Process each segment independently
+        segments.forEach(segment => {
+            let segmentScore = 0;
+            let segmentCastles = [];
+
+            // Calculate score for the segment
+            segment.forEach(cell => {
+                if (cell) {
+                    if (cell.value !== undefined) {
+                        segmentScore += cell.value; // Accumulate values
+                    }
+                    if (cell.castleOwner) {
+                        segmentCastles.push(cell); // Collect castles in the segment
+                    }
                 }
+            });
+
+            // Apply special effects within the segment
+            const hasDragon = segment.some(cell => cell && cell.effect === "dragon");
+            const hasGoldmine = segment.some(cell => cell && cell.effect === "goldmine");
+
+            if (hasDragon) {
+                segmentScore = applyDragonEffect(segment);
+            } else if (hasGoldmine) {
+                segmentScore = applyGoldmineEffect(segment);
             }
-        }
 
-    
-        rowCells.forEach(cell => {
-                if (cell && cell.value !== undefined) {
-                    rowScore += cell.value;
-                }
-         });
-       
-
-        // Calculate row scores for castles
-        rowCastles.forEach(castle => {
-            const owner = players.find(p => p.name === castle.castleOwner);
-            if (owner) owner.score += rowScore * castle.multi;
+            // Assign segment score to castles
+            segmentCastles.forEach(castle => {
+                const owner = players.find(p => p.name === castle.castleOwner);
+                if (owner) owner.score += segmentScore * castle.multi;
+            });
         });
     }
 
     // Calculate scores for columns
     for (let col = 0; col < cols; col++) {
-        let colScore = 0;
-        let colCastles = [];
-  
+        const colCells = board.map(row => row[col]); // Extract column as an array
+        const segments = applyMountainEffect(colCells); // Split column into segments
 
-        // Collect column data
-        const colCells = [];
-        for (let row = 0; row < rows; row++) {
-            const cell = board[row][col];
-            if (cell) {
-                colCells.push(cell);
-               
-                if (cell.castleOwner) {
-                    colCastles.push(cell);
+        // Process each segment independently
+        segments.forEach(segment => {
+            let segmentScore = 0;
+            let segmentCastles = [];
+
+            // Calculate score for the segment
+            segment.forEach(cell => {
+                if (cell) {
+                    if (cell.value !== undefined) {
+                        segmentScore += cell.value; // Accumulate values
+                    }
+                    if (cell.castleOwner) {
+                        segmentCastles.push(cell); // Collect castles in the segment
+                    }
                 }
-            }
-        }
+            });
 
-       
-        // Calculate column scores for castles
-        colCastles.forEach(castle => {
-            const owner = players.find(p => p.name === castle.castleOwner);
-            if (owner) owner.score += colScore * castle.multi;
+            // Apply special effects within the segment
+            const hasDragon = segment.some(cell => cell && cell.effect === "dragon");
+            const hasGoldmine = segment.some(cell => cell && cell.effect === "goldmine");
+
+            if (hasDragon) {
+                segmentScore = applyDragonEffect(segment);
+            } else if (hasGoldmine) {
+                segmentScore = applyGoldmineEffect(segment);
+            }
+
+            // Assign segment score to castles
+            segmentCastles.forEach(castle => {
+                const owner = players.find(p => p.name === castle.castleOwner);
+                if (owner) owner.score += segmentScore * castle.multi;
+            });
         });
     }
 
