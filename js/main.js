@@ -1,9 +1,10 @@
 import { pickCard, pickCastle, cardBoard, castleBoard, hideCards, overlay, closeCard, closeCastle, gameBoard, selectedDOM, playerSetup, gameScreen } from "./DOMs.js";
 import { cards, shuffleCards } from "./cards.js";
 import { renderBoard, renderCards, initializeBoard } from "./init.js";
-import { select_Card, place_Card } from "./gamelogic.js";
+import { select_Card, place_Card, select_Castle } from "./gamelogic.js";
 import { showCards, closeCards, showCastles, closeCastles } from "./events.js";
 import { setupStartScreen } from "./startscreen.js";
+import { render_Castles } from "./castles.js";
 
 setupStartScreen(startGame)
 
@@ -31,6 +32,9 @@ function startGame(players) {
         currentPlayerIndex: 0,
     };
 
+
+    console.log(gameState)
+
     renderBoard(gameBoard, rows, cols);
     shuffleCards(c_board, c_rows, c_cols);
     renderCards(cardBoard, c_rows, c_cols, closeCard);
@@ -39,7 +43,11 @@ function startGame(players) {
     closeCards(closeCard, cardBoard, overlay)
     closeCastles(closeCastle, castleBoard, overlay)
     select_Card(gameState, c_board, selectedDOM, cardBoard, overlay)
+    render_Castles(gameState, castleBoard, overlay)
+    select_Castle(gameState, castleBoard, overlay, selectedDOM)
     place_Card(gameState, board, selectedDOM, c_board)
+    
+    
 }
 
 

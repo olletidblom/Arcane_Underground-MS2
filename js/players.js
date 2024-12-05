@@ -1,5 +1,6 @@
 import { castles } from "./castles.js";
 
+
 // Generate Players Based on Count
 export function generatePlayers(numPlayers) {
     if (numPlayers < 2 || numPlayers > 4) {
@@ -34,3 +35,4 @@ export function assignPlayerColor(player, color) {
 export function updatePlayerScore(player, points) {
     player.score += points;
 }
+
