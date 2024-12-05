@@ -3,6 +3,9 @@ import { cards, shuffleCards } from "./cards.js";
 import { renderBoard, renderCards } from "./render.js";
 import { select_Card, place_Card } from "./gamelogic.js";
 import { showCards, closeCards, showCastles, closeCastles } from "./events.js";
+import { setupStartScreen } from "./startscreen.js";
+
+
 
 
 const rows = 5;

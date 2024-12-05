@@ -1,6 +1,6 @@
 
 
-
+// Render board to screen
 export function renderBoard(gameBoard, rows, cols) {
     gameBoard.innerHTML = ""; // Clear any existing tiles
     for (let row = 0; row < rows; row++) {
@@ -15,6 +15,7 @@ export function renderBoard(gameBoard, rows, cols) {
     console.log("Game board rendered");
 }
 
+// Render cards to cardboard
 export function renderCards(cardBoard, c_rows, c_cols, closeCard) {
     cardBoard.innerHTML = "";
     for (let row = 0; row < c_rows; row++) {

@@ -1,3 +1,5 @@
+
+// Generate Castles
 const generateCastles = (color) => {
     return {
         castles: {
@@ -10,6 +12,7 @@ const generateCastles = (color) => {
     };
 };
 
+// Add Castles to players
 export const castles = {
     blue: generateCastles("blue"),
     red: generateCastles("red"),

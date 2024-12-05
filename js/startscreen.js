@@ -1,5 +1,7 @@
 import { generatePlayers, assignPlayerColor } from "./players.js";
 
+
+// Setup for game
 export function setupStartScreen(startGameCallback) {
     // Start Game Button
     document.getElementById("start-game-btn").addEventListener("click", () => {
@@ -16,6 +18,7 @@ export function setupStartScreen(startGameCallback) {
     });
 }
 
+// Add and select players for game
 function setupPlayerForm(numPlayers, startGameCallback) {
     const players = generatePlayers(numPlayers);
     const form = document.getElementById("player-form");
