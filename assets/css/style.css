@@ -1,3 +1,12 @@
+
+.jaro-fonty {
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -28,8 +37,57 @@ header{
     align-items: center;
     min-height:10em;
     margin-bottom: 0px;
+   
 }  
 
+#player-turn-display {
+    flex: 2; /* Center the turn display */
+    text-align: center;
+    font-family:"Jaro", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fafcff; /* Mystical white-blue font */
+    text-shadow: 0 0 10px #ffffff; /* Glowing effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:160px;
+    display:none; 
+    
+}
+
+#player-turn-display span {
+    color: #000000; /* Highlight player name in gold */
+    text-shadow:  0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle glow for player name */
+    width:20%;
+    font-size: larger;
+    font-weight: 200;
+    background-color: rgba(255, 255, 255, 0.376);
+    border-radius: 50%;
+    font-family:"Jaro", sans-serif;
+    box-shadow: 0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+#info { 
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    font-size: larger;
+    top: 30px; /* Distance from the top of the header */
+    right: 100px; /* Distance from the right of the header */
+    display: none; /* Use flexbox for layout */
+    flex-direction: column; /* Stack the spans vertically */
+    align-items: center; /* Align spans to the right edge */
+    text-align: center; /* Ensure text is aligned to the right */
+    gap: 5px; /* Add space between spans */
+    color: #000000; /* Highlight player name in gold */
+    text-shadow:  0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle glow for player name */
+    background-color: rgba(255, 255, 255, 0.376);
+    
+    font-family:"Jaro", sans-serif;
+    box-shadow: 0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+    
+}
 
 
 
@@ -45,8 +103,8 @@ header{
 
 #gameboard{
     display: grid;
-    grid-template-columns: repeat(6, 120px); 
-    grid-template-rows: repeat(5, 120px);  
+    grid-template-columns: repeat(6, 150px); 
+    grid-template-rows: repeat(5, 150px);  
     gap: 10px;
     background-color: #09120a7e;
     border:6px solid black; 

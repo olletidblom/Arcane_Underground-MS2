@@ -22,7 +22,7 @@ export function setupStartScreen(startGameCallback) {
 // Add and select players for game
 function setupPlayerForm(numPlayers, startGameCallback) {
     const players = generatePlayers(numPlayers);
-   
+    document.getElementById("player-count-selection").style.display ="none"; 
     playerForm.innerHTML = ""; // Clear existing form
 
     players.forEach(player => {
@@ -66,6 +66,7 @@ function setupPlayerForm(numPlayers, startGameCallback) {
 
         startGameCallback(players); // Pass the players to the game
         document.getElementById("logo").style.display="none"; 
-        document.getElementById("turn-info").style.display="inline";
+        document.getElementById("player-turn-display").style.display="flex";
+        document.getElementById("info").style.display="flex";
     });
 }

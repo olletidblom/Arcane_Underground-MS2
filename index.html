@@ -5,15 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcane Underground</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
     <header>
         <div id="logo"></div>
-        <div id="turn-info"  style="display:none">
-            <h2 id="playerTurn"></h2>
+        <div id="player-turn-display">
+            <span id="playerTurn">Olles turn to play</span>
+            <span id="player-round-score">12</span>
         </div>
+        <div id="info">
+            <span id="round">Round: 3</span>
+            <span id="total-score">Total-score: 235</span>
+            
+        </div>
+        
     </header>
 
     <main>
