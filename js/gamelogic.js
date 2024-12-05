@@ -95,6 +95,8 @@ export function place_Card(gameState, board, selectedDOM, castleBoard, overlay) 
                 gameState.currentPlayerIndex = (gameState.currentPlayerIndex + 1) % gameState.players.length;
 
                 document.getElementById("playerTurn").innerText = `${gameState.players[gameState.currentPlayerIndex].name}'s Turn`;
+                document.getElementById("player-round-score").innerText = `Score:${gameState.players[gameState.currentPlayerIndex].score}'`;
+                
                 
             } else {
                 alert("No item selected to place.");

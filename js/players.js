@@ -14,7 +14,8 @@ export function generatePlayers(numPlayers) {
             name: `Player ${i}`,
             color: null, // To be selected during setup
             castles: [], // Will link castles after color selection
-            score: 0,    // Track player score
+            score: 0,
+            totalscore: 0,    // Track player score
         });
     }
     return players;

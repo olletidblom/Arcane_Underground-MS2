@@ -17,3 +17,7 @@ export const playButton = document.getElementById("start-game-btn");
 export const playerForm = document.getElementById("player-form")
 export const playerDetails = document.getElementById("player-details")
 export const startGameBtn = document.getElementById("start-game-play-btn"); 
+export const playerTurn = document.getElementById("playerTurn"); 
+export const playerRoundScore = document.getElementById("player-round-score"); 
+export const round = document.getElementById("round"); 
+export const totalScore = document.getElementById("total-score")
