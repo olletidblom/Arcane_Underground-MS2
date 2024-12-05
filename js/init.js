@@ -31,3 +31,9 @@ export function renderCards(cardBoard, c_rows, c_cols, closeCard) {
 
     console.log("Cards rendered");
 }
+
+// InitBoard
+export function initializeBoard(rows, cols) {
+    const board = Array.from({ length: rows }, () => Array(cols).fill(null));
+    return board; 
+}

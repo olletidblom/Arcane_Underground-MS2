@@ -1,5 +1,7 @@
 
 
+
+// Select cards funcition
 export function select_Card(gameState, c_board, selectedDOM, cardBoard, overlay) {
     const cards = document.querySelectorAll(".c-tiles");
     cards.forEach(cardTile => {
@@ -25,6 +27,7 @@ export function select_Card(gameState, c_board, selectedDOM, cardBoard, overlay)
     });
 }
 
+// Place card on board function
 export function place_Card(gameState, board, selectedDOM) {
     const boardTiles = document.querySelectorAll(".b-tiles");
     boardTiles.forEach(tile => {
@@ -50,3 +53,5 @@ export function place_Card(gameState, board, selectedDOM) {
         });
     });
 }
+
+

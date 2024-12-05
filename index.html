@@ -14,10 +14,32 @@
     </header>
 
     <main>
-        <div id="game-screen">
+        <!-- Start Menu -->
+        <div id="start-menu">
+            <!-- <h1>Welcome to Arcane Underground</h1> -->
+            <button id="start-game-btn">Start Game</button>
+            <button id="how-to-play-btn">How to Play</button>
+        </div>
+
+        <!-- Player Setup -->
+        <div id="player-setup" style="display: none;">
+            <div id="player-count-selection">
+                <button class="player-count-btn" data-players="2">2 Players</button>
+                <button class="player-count-btn" data-players="3">3 Players</button>
+                <button class="player-count-btn" data-players="4">4 Players</button>
+            </div>
+            <div id="player-details" style="display: none;">
+                <form id="player-form"></form>
+                <button id="start-game-play-btn">Start Game</button>
+            </div>
+        </div>
+
+
+
+        <div id="game-screen" style="display: none;">
             <section id="gameboard-container">
                 <div id="gameboard">
-                   
+
                 </div>
                 <div id="cards-container">
                     <div id="overlay"></div>
