@@ -14,14 +14,14 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #2e2e2e;
-    background-image: url(/assets/images/board/background.webp);
+    background-image: url(assets/images/board/background.webp);
     background-repeat: no-repeat;
     background-size: cover;
     
 }
 
 #logo{
-    background-image: url(/assets/images/logo/logo2.png);
+    background-image: url(assets/images/logo/logo2.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -161,7 +161,7 @@ header{
     height:100%; 
     width:100%; 
     background-color: #4b3a3a0f;
-    background-image: url(/assets/images/board/grid.png);
+    background-image: url(assets/images/board/grid.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -169,7 +169,7 @@ header{
 .c-tiles{ 
     border: 2px solid #333; /* Thicker border for emphasis */
     display: flex;
-    background-image: url(/assets/images/tiles/tile_background.webp);
+    background-image: url(assets/images/tiles/tile_background.webp);
     background-repeat: no-repeat;
     height:100%; 
     width:100%; 
