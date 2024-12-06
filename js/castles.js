@@ -22,7 +22,7 @@ export const castles = {
 };
 
 
-export function render_Castles(gameState, castleBoard) {
+/*export function render_Castles(gameState, castleBoard) {
     const currentPlayer = gameState.players[gameState.currentPlayerIndex];
     let playerCastles = currentPlayer.castles; // Get castles for current player
 
@@ -45,4 +45,34 @@ export function render_Castles(gameState, castleBoard) {
     });
 
 
+}*/
+export function render_Castles(gameState, castleBoard) {
+    const currentPlayer = gameState.players[gameState.currentPlayerIndex];
+    let playerCastles = currentPlayer.castles; // Get castles for current player
+
+    // Clear the castle board before rendering new data
+    castleBoard.innerHTML = "";
+
+    // Dynamically render castles based on the current player's data
+    playerCastles.forEach((castle, index) => {
+        if (castle.amount >= 0) { // Only render castles with remaining amount
+            const castleTile = document.createElement("div");
+            castleTile.classList.add("c-tiles");
+            castleTile.style.backgroundImage = `url(${castle.image})`;
+            castleTile.style.backgroundSize = "cover";
+            castleTile.dataset.index = index;
+
+            // Add a label to show how many are left
+            const castleCount = document.createElement("span");
+            castleCount.classList.add("castle-count");
+            castleCount.textContent = `x${castle.amount}`;
+            castleTile.appendChild(castleCount); // Add count label to the castle tile
+
+            // Add to the castle board
+            castleBoard.appendChild(castleTile);
+        }
+    });
+
+    // Append close button or functionality (assuming it's a DOM element)
+    castleBoard.appendChild(closeCastle);
 }

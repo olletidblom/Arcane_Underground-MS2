@@ -6,9 +6,16 @@ export function select_Castle(gameState, castleBoard, overlay, selectedDOM) {
     const castleTiles = castleBoard.querySelectorAll(".c-tiles");
     castleTiles.forEach(castleTile => {
         castleTile.addEventListener("click", () => {
+
+            
             const index = castleTile.dataset.index;
             const currentPlayer = gameState.players[gameState.currentPlayerIndex];
             const selectedCastle = currentPlayer.castles[index];
+            if (selectedCastle.amount <= 0) {
+                alert("This castle is no longer available. Please pick a valid castle.");
+                return; // Prevent further processing
+            }
+            
             
                 gameState.selected = selectedCastle;
                 selectedDOM.style.backgroundImage = `url(${selectedCastle.image})`;

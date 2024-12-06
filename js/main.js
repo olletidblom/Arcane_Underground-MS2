@@ -31,15 +31,16 @@ function startGame(players) {
         c_board,
         selected: null,
         currentPlayerIndex: 0,
+        round: 1, // Initialize round
     };
     
-    
+
     renderBoard(gameBoard, rows, cols);
     renderCards(cardBoard, c_rows, c_cols);
     shuffleCards(cards, c_board, c_rows, c_cols);
-  
-    
-    
+
+
+
     showCards(pickCard, cardBoard, overlay)
     showCastles(pickCastle, castleBoard, overlay, gameState, selectedDOM)
     closeCards(closeCard, cardBoard, overlay)
@@ -50,44 +51,73 @@ function startGame(players) {
     place_Card(gameState, board, selectedDOM)
     calculateScores(gameState)
 
+    
     playerTurn.innerText = `${players[0].name}'s Turn`;
-    playerRoundScore.innerText =`Score: ${players[0].score}`
+    playerRoundScore.innerText = `Score: ${players[0].score}`
+    const totalScores = gameState.players.map(player => `${player.name}: ${player.totalscore}`).join('<br>');
+    totalScore.innerHTML = `Total Scores:<br>${totalScores}`;
 
     // Start the game loop
-    //startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols);
+
+    startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board);
 }
 
 // Modify game loop
 
-function startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols) {
-    let round = 1; // Track the current round
+function startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board) {
+    
 
     const interval = setInterval(() => {
         if (checkBoardFilled(gameState.board)) {
             clearInterval(interval); // Clear interval to avoid multiple calls to `endRound`
 
-            if (round > 3) {
+            if (gameState.round > 3) {
                 endGame(gameState);
             } else {
                 endRound(gameState, () => {
                     // Advance to the next round
-                    round += 1;
+                    gameState.round += 1;
 
                     // Reset the board for the next round
-                    resetBoard(gameState, c_board, cardBoard, closeCard, c_rows, c_cols);
+                    resetBoard(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board);
 
                     // Update the round display
-                    document.getElementById("round").innerText = `Round: ${round}`;
+                    document.getElementById("round").innerText = `Round: ${gameState.round}`;
 
                     // Restart the loop for the next round
-                    startGameLoop(gameState);
+                    startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board );
                 });
             }
         }
     }, 1000);
 }
+/*
+function startGameLoop(gameState, c_board, cardBoard, gameBoard, castleBoard, c_rows, c_cols, cards, rows, cols) {
+    const interval = setInterval(() => {
+        if (checkBoardFilled(gameState.board)) {
+            clearInterval(interval); // Stop the loop
 
-    
+            if (gameState.round >= 3) {
+                endGame(gameState);
+            } else {
+                endRound(gameState, () => {
+                    gameState.round++; // Increment the round
+
+                    // Reset the board for the next round
+                    resetBoard(gameState, c_board, cardBoard, gameBoard, castleBoard, rows, cols, c_rows, c_cols, cards);
+
+                    // Update the round display
+                    document.getElementById("round").innerText = `Round: ${gameState.round}`;
+
+                    // Start the loop again
+                    startGameLoop(gameState, c_board, cardBoard, gameBoard, castleBoard, c_rows, c_cols, cards, rows, cols);
+                });
+            }
+        }
+    }, 1000);
+}
+*/
+
 
 function checkBoardFilled(board) {
     return board.every(row => row.every(cell => cell !== null));
@@ -98,50 +128,62 @@ function endRound(gameState, onNextRound) {
     calculateScores(gameState);
 
     const { players } = gameState;
-    let roundScores = players.map(player => `${player.name}: ${player.score}`).join('\n');
+    const roundScores = players.map(player => `${player.name}: ${player.score}`).join('\n');
 
-    // Display the scores in an alert
+    // Display the scores
     setTimeout(() => {
         alert(`Round Over! Scores:\n${roundScores}`);
 
-        // Update total scores for each player
+        // Update total scores for each player and reset round scores
         players.forEach(player => {
             player.totalscore = (player.totalscore || 0) + player.score;
-            player.score = 0; // Reset round score for the next round
-            
+            player.score = 0; // Reset score for the next round
         });
 
-        // Call the callback to proceed to the next round
+        // Trigger the next round
         if (onNextRound) onNextRound();
-    }, 100); // Add a slight delay to ensure the alert works correctly
+    }, 100); // Slight delay to ensure alert works correctly
 }
 
-function resetBoard(gameState, c_board, cardBoard, closeCard, c_rows, c_cols) {
-    // Clear the board
+function resetBoard(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board) {
+    // Reset the game board
     gameState.board.forEach(row => row.fill(null));
-   
+
+    // Reset castles and cards
     gameState.players.forEach(player => {
-        player.castles.forEach(castle => {
-            if (castle.image.includes("castle1")) {
-                castle.amount = 4; // Reset to the original amount
-            }
-        });
+        player.castles[0].amount = 4
     });
-    // Re-render the board (if necessary)
-    renderBoard(gameBoard, gameState.board.length, gameState.board[0].length);
-    renderCards(cardBoard, c_rows, c_cols, closeCard);
+
+    // Clear and reinitialize the boards
+    cardBoard.innerHTML = "";
+    gameBoard.innerHTML = "";
+    castleBoard.innerHTML = "";
+
+    renderBoard(gameBoard, rows, cols);
+    renderCards(cardBoard, c_rows, c_cols);
     shuffleCards(cards, c_board, c_rows, c_cols);
-     // Update the total scores and round score displays
+
+
+
+    // Update the display
     const totalScores = gameState.players.map(player => `${player.name}: ${player.totalscore}`).join('<br>');
     totalScore.innerHTML = `Total Scores:<br>${totalScores}`;
 
+    const currentPlayer = gameState.players[gameState.currentPlayerIndex];
+    playerRoundScore.innerText = `Score: ${currentPlayer.score}`;
 
-     const currentPlayer = gameState.players[gameState.currentPlayerIndex];
-     playerRoundScore.innerText = `Score: ${currentPlayer.score}`;
-     
-    
-
+    showCards(pickCard, cardBoard, overlay)
+    showCastles(pickCastle, castleBoard, overlay, gameState, selectedDOM)
+    closeCards(closeCard, cardBoard, overlay)
+    closeCastles(closeCastle, castleBoard, overlay)
+    select_Card(gameState, c_board, selectedDOM, cardBoard, overlay)
+    render_Castles(gameState, castleBoard, overlay)
+    select_Castle(gameState, castleBoard, overlay)
+    place_Card(gameState, board, selectedDOM)
+    calculateScores(gameState)
 }
+
+
 
 function endGame(gameState) {
     calculateScores(gameState);
