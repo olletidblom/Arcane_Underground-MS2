@@ -59,7 +59,7 @@ function setupPlayerForm(numPlayers, startGameCallback) {
             try {
                 assignPlayerColor(player, color);
             } catch (error) {
-                alert(error.message);
+                alert(error.message);s
                 return;
             }
         });

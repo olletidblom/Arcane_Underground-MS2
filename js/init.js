@@ -16,7 +16,7 @@ export function renderBoard(gameBoard, rows, cols) {
 }
 
 // Render cards to cardboard
-export function renderCards(cardBoard, c_rows, c_cols, closeCard) {
+export function renderCards(cardBoard, c_rows, c_cols) {
     cardBoard.innerHTML = "";
     for (let row = 0; row < c_rows; row++) {
         for (let col = 0; col < c_cols; col++) {
@@ -27,9 +27,7 @@ export function renderCards(cardBoard, c_rows, c_cols, closeCard) {
             cardBoard.appendChild(c_tile);
         }
     }
-    cardBoard.appendChild(closeCard)
-
-    console.log("Cards rendered");
+    
 }
 
 // InitBoard
@@ -37,3 +35,4 @@ export function initializeBoard(rows, cols) {
     const board = Array.from({ length: rows }, () => Array(cols).fill(null));
     return board; 
 }
+

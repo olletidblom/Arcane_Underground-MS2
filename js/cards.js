@@ -25,7 +25,7 @@ export const cards = [
 ];
 
 // Function to shuffle the cards
-export function shuffleCards(c_board, c_rows, c_cols) {
+export function shuffleCards(cards, c_board, c_rows, c_cols) {
     let shuffledCards = [...cards]; 
     shuffledCards = shuffledCards.sort(() => Math.random() - 0.5);
 
@@ -41,6 +41,7 @@ export function shuffleCards(c_board, c_rows, c_cols) {
         }
     }
     console.log("Cards shuffled and placed on c_board", c_board);
+    
     const cardTiles = document.querySelectorAll(".c-tiles");
     cardTiles.forEach((cardTile, index) => {
         const row = Math.floor(index / c_cols);
