@@ -44,7 +44,7 @@ function setupPlayerForm(numPlayers, startGameCallback) {
             <div class="player-input">
                 <label for="player${player.id}-name">Player ${player.id}</label>
                 <input type="text" id="player${player.id}-name" placeholder="Enter name" required>
-                <label for="player${player.id}-color">Color:</label>
+                <label for="player${player.id}-color"></label>
                 <select id="player${player.id}-color">
                     <option value="" disabled selected>Pick a color</option>
                     <option value="blue">Blue</option>

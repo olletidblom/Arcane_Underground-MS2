@@ -119,6 +119,20 @@ header{
     border:6px solid black; 
 }
 
+.b-tiles{ 
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%; 
+    width:100%; 
+    background-color: #4b3a3a0f;
+    background-image: url(../images/board/grid.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 #cardboard{ 
     grid-template-columns: repeat(5, 120px); /* Adjust size for larger cards */
     grid-template-rows: repeat(5, 120px); /* Adjust rows for larger cards */
@@ -134,6 +148,23 @@ header{
     display: none; /* Hidden by default */
     overflow: hidden; 
 }
+
+.c-tiles{ 
+    border: 2px solid #333; /* Thicker border for emphasis */
+    /* display: flex;*/ 
+    background-image: url(../images/tiles/tile_background.webp);
+    background-repeat: no-repeat;
+    height:100%; 
+    width:100%; 
+    background-size: cover;
+    cursor: pointer; /* Show pointer to indicate clickability */
+    transition: transform 0.2s ease-in-out; /* Add animation */
+
+}
+.c-tiles:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
 
 #castleboard { 
     display:grid; 
@@ -153,33 +184,12 @@ header{
 }
 
 
-.b-tiles{ 
-    border: 2px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height:100%; 
-    width:100%; 
-    background-color: #4b3a3a0f;
-    background-image: url(../images/board/grid.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
-.c-tiles{ 
-    border: 2px solid #333; /* Thicker border for emphasis */
-    display: flex;
-    background-image: url(../images/tiles/tile_background.webp);
-    background-repeat: no-repeat;
-    height:100%; 
-    width:100%; 
-    background-size: cover;
-    cursor: pointer; /* Show pointer to indicate clickability */
-    transition: transform 0.2s ease-in-out; /* Add animation */
-}
-.c-tiles:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-}
+
+
+
+
+
 
 #overlay {
     position: fixed;
@@ -253,6 +263,7 @@ input{
     background-color: rgba(99, 0, 0, 0.697);
     color:white; 
     height:2em; 
+    margin-bottom: 10px;
     
 }
 select{ 
@@ -339,10 +350,14 @@ select{
         gap: 5px;
     }
 
-    #cardboard,
+    #cardboard{
+        grid-template-columns: repeat(5, 50px);
+        grid-template-rows: repeat(5, 50px);
+        padding: 10px;
+    }
     #castleboard {
         grid-template-columns: repeat(4, 50px);
-        grid-template-rows: repeat(4, 50px);
+        grid-template-rows: repeat(1, 50px);
         padding: 10px;
     }
 
@@ -369,9 +384,15 @@ select{
         gap: 10px;
         margin-top: 10px;
     }
+    input{ 
+      
+        height:1.2em; 
+        
+    }
+
+
 }
 
-/* Tablets (min-width: 601px and max-width: 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
     #logo {
         height: 300px;
@@ -403,10 +424,14 @@ select{
         gap: 8px;
     }
 
-    #cardboard,
-    #castleboard {
+    #cardboard{
         grid-template-columns: repeat(5, 80px);
-        grid-template-rows: repeat(4, 80px);
+        grid-template-rows: repeat(5, 80px);
+        padding: 20px;
+    }
+    #castleboard {
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: repeat(1, 80px);
         padding: 20px;
     }
 
@@ -467,10 +492,15 @@ select{
         gap: 10px;
     }
 
-    #cardboard,
-    #castleboard {
+    #cardboard {
         grid-template-columns: repeat(5, 100px);
-        grid-template-rows: repeat(4, 100px);
+        grid-template-rows: repeat(5, 100px);
+        padding: 30px;
+
+    }
+    #castleboard {
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: repeat(1, 100px);
         padding: 30px;
     }
 
