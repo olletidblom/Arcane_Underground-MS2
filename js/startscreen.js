@@ -1,9 +1,23 @@
 import { generatePlayers, assignPlayerColor } from "./players.js";
-import { startGameBtn, startScreen, playerSetup, playerForm, playerDetails, playButton } from "./DOMs.js";
+import { startGameBtn, startScreen, playerSetup, playerForm, playerDetails, playButton, startMenu, howToPlay, howToPlayBtn, backToMenuBtn } from "./DOMs.js";
+
+
 
 
 // Setup for game
 export function setupStartScreen(startGameCallback) {
+
+    // Show the "How to Play" screen
+    howToPlayBtn.addEventListener('click', () => {
+        startMenu.style.display = 'none'; // Hide the start menu
+        howToPlay.style.display = 'block'; // Show the How to Play section
+    });
+
+    // Back to menu button
+    backToMenuBtn.addEventListener('click', () => {
+        howToPlay.style.display = 'none'; // Hide the How to Play section
+        startMenu.style.display = 'block'; // Show the start menu
+    });
     // Start Game Button
     playButton.addEventListener("click", () => {
         startScreen.style.display = "none";
@@ -22,7 +36,7 @@ export function setupStartScreen(startGameCallback) {
 // Add and select players for game
 function setupPlayerForm(numPlayers, startGameCallback) {
     const players = generatePlayers(numPlayers);
-    document.getElementById("player-count-selection").style.display ="none"; 
+    document.getElementById("player-count-selection").style.display = "none";
     playerForm.innerHTML = ""; // Clear existing form
 
     players.forEach(player => {
@@ -59,14 +73,14 @@ function setupPlayerForm(numPlayers, startGameCallback) {
             try {
                 assignPlayerColor(player, color);
             } catch (error) {
-                alert(error.message);s
+                alert(error.message); s
                 return;
             }
         });
 
         startGameCallback(players); // Pass the players to the game
-        document.getElementById("logo").style.display="none"; 
-        document.getElementById("player-turn-display").style.display="flex";
-        document.getElementById("info").style.display="flex";
+        document.getElementById("logo").style.display = "none";
+        document.getElementById("player-turn-display").style.display = "flex";
+        document.getElementById("info").style.display = "flex";
     });
 }

@@ -34,6 +34,60 @@
             <button id="how-to-play-btn">How to Play</button>
         </div>
 
+        <div id="how-to-play">
+            <h1>How to Play Arcane-Underground</h1>
+            <h2>Objective</h2>
+         <p>Accumulate the most points by strategically placing your castles and claiming valuable tiles across the board while avoiding traps and dangers hidden underground.</p>
+    
+            <h2>Tiles:</h2>
+      
+            <ul>
+                <li><strong>Treasure Tiles:</strong> Provide positive values or special effects.</li>
+                <li><strong>Danger Tiles:</strong> Subtract points and bring peril.</li>
+                <li><strong>Neutral Tiles:</strong> Represent mystical effects that influence the game.</li>
+                <li><strong>Castle Tiles:</strong> Claims points for the player</li>
+            </ul>
+            <ul>
+                <li><strong>Players:</strong> Each player has a set of castle tiles to place on the board.</li>
+            </ul>
+    
+    <h2>Game Play</h2>
+    
+    <h3>1. Players Turn</h3>
+    <p>WHen its you turn, you can choose between one of this two:</p>
+    <ul>
+        <li><strong>Placing Tiles:</strong> Players draws a tile and place it onto any unoccupied space on the board.</li>
+        <li><strong>Placing Castles:</strong> Players choose a castle of the value they want and place it onto any unoccupied space on the board, Claiming the points on that row and col.</li>
+    </ul>
+    
+    <h3>2. Reveal and Score</h3>
+    <p>Once the board is full, Each row and column's total score is calculated based on:</p>
+    <ul>
+        <li>Positive points from treasure tiles.</li>
+        <li>Negative points from danger tiles.</li>
+        <li>Effects from neutral tiles.</li>
+    </ul>
+    <p>Players with a caslte in a row or column collects its total score (positive or negative).</p>
+    
+    <h2>Special Tiles</h2>
+    <p>Certain tiles have unique effects that can dramatically alter the game:</p>
+    <ul>
+        <li><strong>Dragon:</strong> Blocks all positive points in its row and column.</li>
+        <li><strong>Goldmine:</strong> Multiplies both positive and negative points in its row and column.</li>
+        <li><strong>Mountain:</strong> Acts as an unmovable obstacle, splits row and col into 2.</li>
+    </ul>
+    
+    <h2>End of a Round</h2>
+    <p>At the end of each round, clear the board, shuffle the tiles, and prepare for the next round. You loose all the castles you placed, except for the x1 castle that you get back.</p>
+    
+    <h2>Winning the Game</h2>
+    <p>After three rounds, the player with the highest total score wins the game and claims the title of <strong>Master of the Arcane-Underground</strong>!</p>
+    
+
+    <button id="back-to-menu-btn">Back to Menu</button>
+           
+ </div>
+
         <!-- Player Setup -->
         <div id="player-setup" style="display: none;">
             <div id="player-count-selection">
@@ -74,7 +128,14 @@
 
     </main>
 
+    <footer id="site-footer">
+        <span class="footer-left">Arcane Underground</span>
+        <span class="footer-right">Olle Tidblom &copy; 2024</span>
+    </footer>
+
     <script type="module" src="js/main.js"></script>
+
+
 </body>
 
 </html>

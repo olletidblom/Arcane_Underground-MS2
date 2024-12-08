@@ -272,97 +272,229 @@ select{
 }
 
 
+#how-to-play {
+    position: fixed; /* Position the element relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to fully center */
+    background-color:rgba(245, 245, 245, 0.703);
+    padding: 20px;
+    z-index: 1000; /* Ensure it appears above other elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for a modal-like feel */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 90%; /* Make it responsive */
+    max-height: 90%; /* Prevent overflow */
+    overflow-y: auto; /* Add scroll if content exceeds height */
+    display: none; /* Initially hidden */
+}
 
-/* Mobile screens */
+
+#site-footer {
+    position: fixed; /* Sticks the footer to the bottom */
+    bottom: 0; /* Aligns it to the bottom */
+    left:0; 
+    right:0; 
+    width: 100%; /* Makes it span the full width of the viewport */
+    background-color: #3333334c; /* Dark background */
+    color: #fff; /* White text */
+    display: flex; /* Enables flexbox for alignment */
+    justify-content: space-around; /* Spaces items evenly across the footer */
+    align-items: center; /* Vertically centers the text */
+    padding: 10px 20px; /* Adds padding */
+    font-size: 14px; /* Adjust font size as needed */
+    z-index: 100; /* Ensures it stays above most elements */
+}
+
+
+
+/* Mobile screens (max-width: 600px) */
 @media (max-width: 600px) {
+    #logo {
+        height: 150px;
+        width: 50%;
+    }
+
+    #player-turn-display {
+        font-size: 18px;
+        height: 100px;
+    }
+
+    #player-turn-display span {
+        font-size: 14px;
+        width: 40%;
+    }
+
+    #info {
+        top: 10px;
+        right: 20px;
+    }
+
+    #info span {
+        font-size: 12px;
+    }
+
     #gameboard {
-        grid-template-columns: repeat(6, 60px); /* Reduce tile size */
-        grid-template-rows: repeat(5, 60px);
-        gap: 6px; /* Smaller gap */
+        grid-template-columns: repeat(6, 50px);
+        grid-template-rows: repeat(5, 50px);
+        gap: 5px;
     }
 
-    #cardboard {
-        grid-template-columns: repeat(5, 60px);
-        grid-template-rows: repeat(5, 60px);
-        gap: 6px;
+    #cardboard,
+    #castleboard {
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: repeat(4, 50px);
+        padding: 10px;
     }
 
-    .c-tiles, .b-tiles {
-        width: 100%;
-        height: 100%;
-        font-size: 14px; /* Adjust font size */
+    button {
+        font-size: 12px;
+        padding: 8px 15px;
     }
 
-    .logo {
-        height: 80px; /* Adjust logo size */
-        margin-top: 10px;
-        margin-bottom: 20px;
+    #site-footer {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .b-tiles, .c-tiles {
+        font-size: 10px;
+    }
+
+    #how-to-play {
+        font-size: 14px;
+        padding: 15px;
     }
 
     .bottom-panel {
         gap: 10px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
+        margin-top: 10px;
     }
 }
 
-/* Tablets */
+/* Tablets (min-width: 601px and max-width: 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
+    #logo {
+        height: 300px;
+        width: 40%;
+    }
+
+    #player-turn-display {
+        font-size: 20px;
+        height: 120px;
+    }
+
+    #player-turn-display span {
+        font-size: 16px;
+        width: 30%;
+    }
+
+    #info {
+        top: 20px;
+        right: 40px;
+    }
+
+    #info span {
+        font-size: 14px;
+    }
+
     #gameboard {
         grid-template-columns: repeat(6, 100px);
         grid-template-rows: repeat(5, 100px);
         gap: 8px;
     }
 
-    #cardboard {
-        grid-template-columns: repeat(5, 100px);
-        grid-template-rows: repeat(5, 100px);
-        min-height:400px; 
-        
-    }
-
-    .c-tiles, .b-tiles {
-        width: 100%;
-        height: 100%;
-        font-size: 16px;
-    }
-
-
-    .logo {
-        height: 100px;
+    #cardboard,
+    #castleboard {
+        grid-template-columns: repeat(5, 80px);
+        grid-template-rows: repeat(4, 80px);
+        padding: 20px;
     }
 
     button {
         font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    #site-footer {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .b-tiles, .c-tiles {
+        font-size: 12px;
+    }
+
+    #how-to-play {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .bottom-panel {
+        gap: 15px;
+        margin-top: 15px;
     }
 }
 
+/* Small Desktops and Large Tablets (min-width: 1025px and max-width: 1280px) */
 @media (min-width: 1025px) and (max-width: 1280px) {
+    #logo {
+        height: 400px;
+        width: 30%;
+    }
+
+    #player-turn-display {
+        font-size: 22px;
+        height: 140px;
+    }
+
+    #player-turn-display span {
+        font-size: 18px;
+        width: 25%;
+    }
+
+    #info {
+        top: 25px;
+        right: 60px;
+    }
+
+    #info span {
+        font-size: 16px;
+    }
+
     #gameboard {
         grid-template-columns: repeat(6, 120px);
         grid-template-rows: repeat(5, 120px);
         gap: 10px;
     }
 
-    #cardboard {
-        grid-template-columns: repeat(5, 120px);
-        grid-template-rows: repeat(5, 120px);
-        min-height:400px; 
-        
+    #cardboard,
+    #castleboard {
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(4, 100px);
+        padding: 30px;
     }
 
-    .c-tiles, .b-tiles {
-        width: 100%;
-        height: 100%;
-        font-size: 16px;
-    }
-
-
-   
     button {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+
+    #site-footer {
         font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .b-tiles, .c-tiles {
+        font-size: 14px;
+    }
+
+    #how-to-play {
+        font-size: 18px;
+        padding: 25px;
+    }
+
+    .bottom-panel {
+        gap: 20px;
+        margin-top: 20px;
     }
 }

@@ -21,3 +21,7 @@ export const playerTurn = document.getElementById("playerTurn");
 export const playerRoundScore = document.getElementById("player-round-score"); 
 export const round = document.getElementById("round"); 
 export const totalScore = document.getElementById("total-score");
+export const startMenu = document.getElementById('start-menu');
+export const howToPlay = document.getElementById('how-to-play');
+export const howToPlayBtn = document.getElementById('how-to-play-btn');
+export const backToMenuBtn = document.getElementById('back-to-menu-btn');
