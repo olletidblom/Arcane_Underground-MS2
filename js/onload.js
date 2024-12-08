@@ -17,7 +17,7 @@ export const imageUrls = [
     "assets/images/tiles/+3_2.png",
     "assets/images/tiles/+2_1.png",
     "assets/images/tiles/+2_2.png",
-    "/assets/images/tiles/+1_1.png",
+    "assets/images/tiles/+1_1.png",
     "assets/images/tiles/+1_2.png",
     "assets/images/tiles/-6.png",
     "assets/images/tiles/-5.png",
