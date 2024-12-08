@@ -1,3 +1,4 @@
+import { closeCard } from "./DOMs.js";
 
 
 // Render board to screen
@@ -26,6 +27,7 @@ export function renderCards(cardBoard, c_rows, c_cols) {
             c_tile.dataset.col = col;
             cardBoard.appendChild(c_tile);
         }
+        cardBoard.appendChild(closeCard);
     }
     
 }

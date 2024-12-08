@@ -48,7 +48,7 @@ export function shuffleCards(cards, c_board, c_rows, c_cols) {
         const col = index % c_cols;
 
         if (!c_board[row][col]) {
-            cardTile.style.display = "none"; 
+            cardTile.style.visability = "hide"; 
         }
     });
 }
