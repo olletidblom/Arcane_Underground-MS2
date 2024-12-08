@@ -5,8 +5,12 @@ import { select_Card, place_Card, select_Castle, calculateScores } from "./gamel
 import { showCards, closeCards, showCastles, closeCastles } from "./events.js";
 import { setupStartScreen } from "./startscreen.js";
 import { render_Castles } from "./castles.js";
+import { preloadImages, imageUrls } from "./onload.js";
 
+window.addEventListener("load", () => preloadImages(imageUrls));
 setupStartScreen(startGame)
+// Preload images when the window loads
+
 
 
 function startGame(players) {
