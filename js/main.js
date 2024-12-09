@@ -6,6 +6,7 @@ import { showCards, closeCards, showCastles, closeCastles } from "./events.js";
 import { setupStartScreen } from "./startscreen.js";
 import { render_Castles } from "./castles.js";
 import { preloadImages, imageUrls } from "./onload.js";
+import { performBotTurn } from "./bot.js";
 
 window.addEventListener("load", () => preloadImages(imageUrls));
 setupStartScreen(startGame)
@@ -69,31 +70,35 @@ function startGame(players) {
 // Modify game loop
 
 function startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board) {
-    
-
     const interval = setInterval(() => {
         if (checkBoardFilled(gameState.board)) {
-            clearInterval(interval); // Clear interval to avoid multiple calls to `endRound`
+            clearInterval(interval);
 
             if (gameState.round > 3) {
                 endGame(gameState);
             } else {
                 endRound(gameState, () => {
-                    // Advance to the next round
                     gameState.round += 1;
-
-                    // Reset the board for the next round
                     resetBoard(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board);
-
-                    // Update the round display
                     document.getElementById("round").innerText = `Round: ${gameState.round}`;
-
-                    // Restart the loop for the next round
-                    startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board );
+                    startGameLoop(gameState, c_board, cardBoard, closeCard, c_rows, c_cols, cards, rows, cols, board);
                 });
             }
+        } else {
+            const currentPlayer = gameState.players[gameState.currentPlayerIndex];
+
+            if (currentPlayer.isBot) {
+                
+                performBotTurn(gameState, c_board, board,selectedDOM); // Execute bot logic
+                gameState.currentPlayerIndex = (gameState.currentPlayerIndex + 1) % gameState.players.length;
+            }
+
+           
+         
+            document.getElementById("player-round-score").innerText = `Score: ${gameState.players[gameState.currentPlayerIndex].score}`;
+            document.getElementById("playerTurn").innerText = `${gameState.players[gameState.currentPlayerIndex].name}'s Turn`;
         }
-    }, 1000);
+    }, 1000); // Adjust interval for pacing
 }
 /*
 function startGameLoop(gameState, c_board, cardBoard, gameBoard, castleBoard, c_rows, c_cols, cards, rows, cols) {

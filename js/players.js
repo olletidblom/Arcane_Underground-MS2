@@ -9,14 +9,23 @@ export function generatePlayers(numPlayers) {
 
     const players = [];
     for (let i = 1; i <= numPlayers; i++) {
+        // Read player name and bot status from the form
+       
+        
+       
+      
         players.push({
             id: i,
-            name: `Player ${i}`,
-            color: null, // To be selected during setup
-            castles: [], // Will link castles after color selection
+            name: `Player ${i}`, // Fallback to default name if empty
+            color: null,
+            castles: [],
             score: 0,
-            totalscore: 0,    // Track player score
+            totalscore: 0,
+            isBot: false, // Set the bot status
         });
+        
+
+        
     }
     return players;
 }

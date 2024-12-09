@@ -52,6 +52,7 @@ function setupPlayerForm(numPlayers, startGameCallback) {
                     <option value="green">Green</option>
                     <option value="yellow">Yellow</option>
                 </select>
+                 <input type="checkbox" id="player${player.id}-is-bot"> Is Bot
             </div>
         `;
     });
@@ -63,6 +64,9 @@ function setupPlayerForm(numPlayers, startGameCallback) {
         players.forEach(player => {
             const name = document.getElementById(`player${player.id}-name`).value;
             const color = document.getElementById(`player${player.id}-color`).value;
+            const isBot = document.getElementById(`player${player.id}-is-bot`).checked; 
+           
+            console.log(isBot)
 
             if (!name || !color) {
                 alert(`Please fill out all details for Player ${player.id}`);
@@ -70,6 +74,7 @@ function setupPlayerForm(numPlayers, startGameCallback) {
             }
 
             player.name = name;
+            player.isBot = isBot; 
             try {
                 assignPlayerColor(player, color);
             } catch (error) {
