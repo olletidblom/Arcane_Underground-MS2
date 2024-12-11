@@ -227,6 +227,17 @@ header{
     margin-top: 50px;
 }
 
+div label, h5 {
+    color:white; 
+}
+
+a{ 
+    font-style: none;
+    font-weight: 200;
+    color:white; 
+    
+}
+
 
 button {
     padding: 10px 20px;
