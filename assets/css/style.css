@@ -1,10 +1,4 @@
 
-.jaro-fonty {
-  font-family: "Jaro", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
 
 
 html, body {
@@ -60,14 +54,14 @@ header{
 
 #player-turn-display span {
     color: #000000; /* Highlight player name in gold */
-    text-shadow:  0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle glow for player name */
+    text-shadow: 0 0 20px #4caf50, 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle glow for player name */
     width:20%;
     font-size: larger;
     font-weight: 200;
     background-color: rgba(255, 255, 255, 0.376);
     border-radius: 50%;
     font-family:"Jaro", sans-serif;
-    box-shadow: 0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5);
+   
 }
 
 
@@ -86,12 +80,11 @@ header{
 
 #info span{ 
     color: #000000; /* Highlight player name in gold */
-    text-shadow:  0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle glow for player name */
+    text-shadow: 0 0 20px #4caf50, 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.376);
     font-size: larger;
     font-family:"Jaro", sans-serif;
-    box-shadow: 0 0 20px #4caf50, inset 0 0 10px rgba(0, 0, 0, 0.5);
-    
+   
 }
 
 .castle-count{ 
@@ -232,7 +225,7 @@ div label, h5 {
 }
 
 a{ 
-    font-style: none;
+    
     font-weight: 200;
     color:white; 
     
