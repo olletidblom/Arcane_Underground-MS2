@@ -1,9 +1,9 @@
 # Project Title
 *Arcane-Underground*
 
-![Mockup image](assets/images/website_pic/devices.png)
+![Mockup image](assets/images/readme/mockup/mockup.png)
 
-[Live webpage](https://olletidblom.github.io/WoodMusic-MS-1/)
+[Live webpage](https://olletidblom.github.io/Arcane_Underground-MS2/)
 ---
 
 
@@ -83,12 +83,13 @@ Its a game for 2-4 players, and can be played either with friends or alone.
 2. As a user, i want to be able to choose between playing a bot or playing with friends. 
 3. As a user, i want to be able to learn how to play the game. 
 4. As a user, i want to be able to see my score and the oponents score. 
-5.  As a user, i want to see who won the game. 
+5. As a user, i want to see who won the game. 
 
 
 #### Site Owner 
 6. As the site owner, want users to be able to contact us for feedback.
 7. As the site owner, i want players to be able to learn and progress their game logic.
+8. As the site owner, if someone gets a 404 i want it to be easy to get back to the main page.
 
 ## Design
 
@@ -118,23 +119,17 @@ a recogniseble interface.
 
 ### Wireframes
 
-<details><summary>Home</summary>
-<img src="assets/images/wireframe/home.png">
+<details><summary>Start Screen</summary>
+<img src="assets/images/readme/wireframes/startScreen.png">
 </details>
-<details><summary>About</summary>
-<img src="assets/images/wireframe/about.png">
+<details><summary>Player Form</summary>
+<img src="assets/images/readme/wireframes/playerForm.png">
 </details>
-<details><summary>Roster</summary>
-<img src="assets/images/wireframe/roster.png">
+<details><summary>Player Info</summary>
+<img src="assets/images/readme/wireframes/playerInfo.png">
 </details>
-<details><summary>Artist</summary>
-<img src="assets/images/wireframe/artistpage.png">
-</details>
-<details><summary>Contact</summary>
-<img src="assets/images/wireframe/contact.png">
-</details>
-<details><summary>404</summary>
-<img src="assets/images/wireframe/404.png">
+<details><summary>Game Board</summary>
+<img src="assets/images/readme/wireframes/gameboard.png">
 </details>
 
 ## Technologies Used
@@ -152,89 +147,93 @@ a recogniseble interface.
 - Google Fonts
 - JShint
 - Lighthouse
+- Bootstrap V.5
 - W3C Markup validation service
 - W3C Jigsaw CSS validation service 
 - WAVE WebAIM web accessibility evaluation tool
 
 ## Features
-The page consists of four pages, two subpages and fourteen features
+The page consists of 2 pages and fourteen features
 
-### Logo and Navigation Bar
-- Featured on all pages
-- The navbar is fully responsive and changes to a toggler (hamburger menu) on smaller screens and includes
-links to the Homepage, About page, Roster page and Contact page
-- Allows users to easily navigate the website in a familliar way
-- Underscore the current selected page the user is on
-- User story 1
-
-![Logo and navbar](assets/images/website_pic/logo_navbar.png)
-
-### About
-- Shows info about the company
-
-![About](assets/images/website_pic/about.png)
-
-### Roster
-- Allows the user to view the current roster at the company
-- All artist are clickeble to see more information
-- User stories 1, 4, 8
-
-![Roster](assets/images/website_pic/artist_page.png)
- 
-### Artist
-- Shows the user more information about the artist
-- A way to listen to the artist music
-- Allows the user the get direct links to the artists socials
-- User stories 1, 4, 8 
-
-![Artist](assets/images/website_pic/artist_induvidual.png)
-
-### Spotify Carousel
-- Allows the user to listen to the artists music from the page
-- Consists of atleast 3 songs
-- User story 1,8
-
-![Spotify Carousel](assets/images/website_pic/spotify_carousel.png)
-
-### Social Links
-- Swaps the original footer for a footer with links to the artist
-- User Story 7
-
-![Social Links](assets/images/website_pic/artist_links.png)
-
+### Start Screen
+- Consists of the logo
+- Allows users to easily start a game or learn how to play.
+- Features the footer with info and contact form.
+- User story 3, 6
+<details><summary>Start Screen</summary>
+<img src="assets/images/readme/website/startpage.png">
+</details>
 
 ### Footer
-- Availeble on all main pages
-- Contains location, number and instagramlink to the company
-- User Stories 2,3,6,7,10
+- Shows info about the creator. 
+- Contains a contact form where people can send in suggestions and feedback.
+- User story 6
+<details><summary>Footer</summary>
+<img src="assets/images/readme/website/footer.png">
+</details>
 
-![Footer](assets/images/website_pic/footer.png)
 
-### Get a face of the owner
-- Features a picture of the CEO of the company
-- Choose not to tell the users much about herself, only focusing on the company
+### Contact Form
+- Allows the user get in touch with the company
 
-![See the owner](assets/images/website_pic/ceo.png)
+- User story 6, 
+<details><summary>Contact Form</summary>
+<img src="assets/images/readme/website/contactform.png">
+</details>
 
-### Contact & Submit
-- Gives the user the email to the manager
-- A submit form for the user to send their music to the company
-- User stories 2, 5, 9
+ 
+### Player Amount
+- Lets the user choose how many players should be in the game
+- User story 1
+<details><summary>Player Amount</summary>
+<img src="assets/images/readme/website/playeramount.png">
+</details>
 
-![Contact & Submit](assets/images/website_pic/contact_submit.png)
 
-### Map
-- Shows the restaurant location on an embeded Google Map
-- User story 3
+### Player info
+- Allows the user assign names and colors to players.
+- Allows the user to choose if player should be bot or not.
+- User story 2
+<details><summary>Player Info</summary>
+<img src="assets/images/readme/website/playernames.png">
+</details>
 
-![Map](assets/images/website_pic/map.png)
 
-### 404
-- If something foes wrong its an easy way back to the mainpage. 
-- User story 11
+### Main Game
+- Allows the user to play the game.
+- Shows total score and round score. 
+- Shows players turn. 
+- Buttons to select cards and castles
+- Shows winner when game is over
+- User Stories 4, 5 , 7 
+<details><summary>Main Game</summary>
+<img src="assets/images/readme/website/maingame.png">
+</details>
 
-![Map](assets/images/website_pic/404.png)
 
+
+### Card Board
+- Allows user to choose between randomly placed cards.
+
+<details><summary>Card Board</summary>
+<img src="assets/images/readme/website/cardboard.png">
+</details>
+
+
+### Castle Board
+- Allows user to choose a castle to place. 
+- Shows user how many castle of each type they have left
+<details><summary>Castle Board</summary>
+<img src="assets/images/readme/website/castleboard.png">
+</details>
+
+
+### 404page
+- If something foes wrong its an easy way back to the mainpage.
+- User story 8
+<details><summary>404</summary>
+<img src="assets/images/readme/website/404.png">
+</details>
 
 ## Validation
 
@@ -312,151 +311,110 @@ The website was tested on the following browsers:
 
 ### Testing user stories
 
-1. As a first time user, I want to quickly find the roster and their music
+1. As a user, i want to be able to choose amount of players in the game.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Roster | Navigate to the Roster page, click on an artist | Showing artists story and preview of their music | Works as expected |
+| Player Amount| Press the Start Game button on start screen. | Allows user to choose amount of players | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/1_1.png">
-<img src="assets/images/user_stores/1_2.png">
-<img src="assets/images/user_stores/1_3.png">
+<img src="assets/images/readme/userStories/1.1.png">
+<img src="aassets/images/readme/userStories/1.2.png">
+
 </details>
 
 
-2. As a first time user, I want to find a way to contact the company
+2. As a user, i want to be able to choose between playing a bot or playing with friends. 
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Contact | Navigate to the Contact page |See Mail and a submit form | Works as expected |
-| Footer | Navigate to the Footer| See Phonenumber, adress and instagram. | Works as expected |
+| Player Info | Press Start Game, then choose amount of players and then your're there. | Play vs computer if you check the bot box. Otherwise player vs player. | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/2_1.png">
-<img src="assets/images/user_stores/2_2.png">
-<img src="assets/images/user_stores/2_3.png">
+<img src="assets/images/readme/userStories/1.1.png">
+<img src="assets/images/readme/userStories/1.2.png">
+<img src="assets/images/readme/userStories/2.3.png">
 </details>
 
-3. As a first time user, I want to be able to see where to company is located.
+3. As a user, i want to be able to learn how to play the game. 
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Contact | Navigate to the Contact page |See googlemaps pin | Works as expected |
-| Footer | Navigate to the Footer| See location and a link for google maps| Works as expected |
+| How to Play | Press the how to play button on the startscreen. |See a guide about how to play | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/3_1.png">
-<img src="assets/images/user_stores/3_2.png">
-<img src="assets/images/user_stores/3_3.png">
+<img src="assets/images/readme/userStories/3.1.png">
+<img src="assets/images/readme/userStories/3.2.png">
+
 </details>
 
-4. As a returning user, I want to be able to read more about the roster and their story.
+4. As a user, i want to be able to see my score and the oponents score. 
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Roster | Navigate to the Roster page, click on an artist | Showing artists story and preview of their music | Works as expected |
+| Player Score | When playing game, score will be shown above the gameboard and in the top right corner. | Player score is visible| Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/1_1.png">
-<img src="assets/images/user_stores/1_2.png">
-<img src="assets/images/user_stores/1_3.png">
+<img src="assets/images/readme/userStories/1.1.png">
+<img src="assets/images/readme/userStories/1.2.png">
+<img src="assets/images/readme/userStories/2.3.png">
+<img src="assets/images/readme/userStories/4.4.png">
+
 </details>
 
-5. As a returnign user, I want to send my music to the company.
+5. As a user, i want to see who won the game. 
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Contact | Navigate to the Contact page, click on an "Submit your music" | Opens a form to send your music | Works as expected |
+| Main Game| When 3 rounds has been played, an alert will pop up with the game results. | Al alert pops up when game is over | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/3_1.png">
-<img src="assets/images/user_stores/3_2.png">
+<img src="assets/images/readme/userStories/1.1.png">
+<img src="assets/images/readme/userStories/1.2.png">
+<img src="assets/images/readme/userStories/2.3.png">
+<img src="assets/images/readme/userStories/5.5.png">
+
 </details>
 
-6. As a returning user, I want to find a phone number.
+6. As the site owner, want users to be able to contact us for feedback.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Footer | Locate the footer on all pages exept artists page | Showing the phone-number to the company| Works as expected |
+| Footer | Look at the footer | Showing a contact link that opens up a form.| Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/6_1.png">
+<img src="assets/images/readme/userStories/6.1.png">
+<img src="assets/images/readme/userStories/6.2.png">
+<img src="assets/images/readme/userStories/6.3.png">
 </details>
 
-7. As a returning user, I want to find the social links to the company and artists.
+7.  As the site owner, i want players to be able to learn and progress their game logic.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Roster | Navigate to the Roster page, click on an artist. Then click the social icon in the bottom you want to visit. | Open link in new tab | Works as expected |
-| Footer | Navigate to the Footer on any page exept artists page, click on instagram symbol.| Opens link in new tab | Works as expected |
+| How to Play | Press the how to play button on the startscreen. |See a guide about how to play | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/1_1.png">
-<img src="assets/images/user_stores/1_2.png">
-<img src="assets/images/user_stores/7_3.png">
-<img src="assets/images/user_stores/7_4.png">
-<img src="assets/images/user_stores/7_5.png">
+<img src="assets/images/readme/userStories/3.1.png">
+<img src="assets/images/readme/userStories/3.2.png">
 </details>
 
-8. As the site owner, I want users to get to know the roster and their music better.
+8. As the site owner, if someone gets a 404 i want it to be easy to get back to the main page.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Roster | Navigate to the Roster page, click on an artist | Showing artists story and preview of their music | Works as expected |
+| 404 | Visit a page that doesnt exists. | 404 page shows with a button to go back to the mainpage.| Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/1_1.png">
-<img src="assets/images/user_stores/1_2.png">
-<img src="assets/images/user_stores/1_3.png">
+<img src="assets/images/readme/userStories/404.png">
 </details>
-
-9. As the site owner, I Want people to send their music so i dont have to chase people on instagram.
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Contact | Navigate to the Contact page, click on an "Submit your music" | Opens a form to send your music | Works as expected |
-
-
-<details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/3_1.png">
-<img src="assets/images/user_stores/3_2.png">
-</details>
-
-10. As the site owner, I want the users to be able to contact me.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Contact | Navigate to the Contact page |See Mail and a submit form | Works as expected |
-| Footer | Navigate to the Footer| See Phonenumber, adress and instagram. | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/2_1.png">
-<img src="assets/images/user_stores/2_2.png">
-<img src="assets/images/user_stores/2_3.png">
-</details>
-
-11. As the site owner, I want people to have an easy way to get back to the page if they accedently write a wrong url (404page)
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| 404 | Write a 1 after the "html" in the browser and press enter.| See 404 page |Works as expected|
-
-
-<details><summary>Screenshots</summary>
-<img src="assets/images/user_stores/11_1.png">
-<img src="assets/images/website_pic/404.png">
-</details>
-
-
-
-
 
 # # Bugs
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
-| Roster picture take to long to buffer | Compressed the img with tinypng|
-| The Spotify carousel switched page when trying to hit play| Added height to the carousel button to make it smaller and not reach the play button|
+| Pictures where loading slow | Added a bufferfunction in JS so all images load when the site loads.|
+| When playing vs bot the bot palce tiles on occupied space| Fixed the function for bots that searches the board and included castles to the search.|
 
 
 
@@ -465,7 +423,7 @@ The website was deployed using GitHub Pages by following these steps:
 1. In the GitHub repository navigate to the Settings tab
 2. On the left hand menu select Pages
 3. For the source select Branch: master
-4. After the webpage refreshes automaticaly you will se a ribbon on the top saying: "Your site is published at https://olletidblom.github.io/WoodMusic-MS-1/"
+4. After the webpage refreshes automaticaly you will se a ribbon on the top saying: "Your site is published at https://olletidblom.github.io/Arcane_Underground-MS2/"
 
 You can for fork the repository by following these steps:
 1. Go to the GitHub repository

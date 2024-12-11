@@ -37,6 +37,7 @@ export const castles = {
   yellow: generateCastles("yellow"),
 };
 
+// Render castles to player
 export function render_Castles(gameState, castleBoard) {
   const currentPlayer = gameState.players[gameState.currentPlayerIndex];
   let playerCastles = currentPlayer.castles; // Get castles for current player

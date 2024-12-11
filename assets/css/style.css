@@ -285,9 +285,6 @@ select{
     height:2em; 
 }
 
-#player-setup{ 
-    background-color: rgba(0, 0, 0, 0.526);
-}
 
 .player-input{ 
     color:rgba(255, 255, 255, 0.881); 

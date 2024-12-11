@@ -71,7 +71,7 @@ function findValidEmptyTiles(board) {
   return emptyTiles;
 }
 
-
+// Function Botplay
 export function performBotTurn(gameState, c_board, board) {
   const currentPlayer = gameState.players[gameState.currentPlayerIndex];
   document.getElementById("player-round-score").innerText =

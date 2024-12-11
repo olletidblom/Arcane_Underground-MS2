@@ -27,11 +27,13 @@ import { setupStartScreen } from "./startscreen.js";
 import { render_Castles } from "./castles.js";
 import { preloadImages, imageUrls } from "./onload.js";
 import { performBotTurn } from "./bot.js";
-
+// Preload images when the window loads
 window.addEventListener("load", () => preloadImages(imageUrls));
 setupStartScreen(startGame);
-// Preload images when the window loads
 
+
+
+// Startgame Fucntion
 function startGame(players) {
  
 
@@ -94,8 +96,7 @@ function startGame(players) {
   );
 }
 
-// Modify game loop
-
+// Game loop
 function startGameLoop(
   gameState,
   c_board,
@@ -112,7 +113,7 @@ function startGameLoop(
     if (checkBoardFilled(gameState.board)) {
       clearInterval(interval);
 
-      if (gameState.round > 3) {
+      if (gameState.round >= 3) {
         endGame(gameState);
       } else {
         endRound(gameState, () => {
@@ -162,10 +163,12 @@ function startGameLoop(
   }, 1000); // Adjust interval for pacing
 }
 
+//Check if board filled
 function checkBoardFilled(board) {
   return board.every((row) => row.every((cell) => cell !== null));
 }
 
+// Round reset
 function endRound(gameState, onNextRound) {
   calculateScores(gameState);
 
@@ -188,6 +191,7 @@ function endRound(gameState, onNextRound) {
   }, 100); // Slight delay to ensure alert works correctly
 }
 
+// Reset for new round
 function resetBoard(
   gameState,
   c_board,
@@ -237,6 +241,7 @@ function resetBoard(
   calculateScores(gameState);
 }
 
+// End game function
 function endGame(gameState) {
   calculateScores(gameState);
 

@@ -1,3 +1,5 @@
+
+// Dragon effect
 export function applyDragonEffect(cells) {
   let modifiedScore = 0;
 
@@ -15,7 +17,7 @@ export function applyDragonEffect(cells) {
 
   return modifiedScore;
 }
-
+// Goldmine effect
 export function applyGoldmineEffect(cells) {
   let modifiedScore = 0;
 
@@ -28,7 +30,7 @@ export function applyGoldmineEffect(cells) {
 
   return modifiedScore;
 }
-
+// Mountain effect
 export function applyMountainEffect(cells) {
   const segments = [];
   let currentSegment = [];

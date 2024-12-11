@@ -4,6 +4,7 @@ import {
   applyMountainEffect,
 } from "./specialCard.js";
 
+// Select castle
 export function select_Castle(gameState, castleBoard, overlay, selectedDOM) {
   const castleTiles = castleBoard.querySelectorAll(".c-tiles");
   castleTiles.forEach((castleTile) => {
@@ -116,6 +117,8 @@ export function place_Card(
   });
 }
 
+
+// Calculate scores
 export function calculateScores(gameState) {
   const { board, players } = gameState;
   const rows = board.length;
