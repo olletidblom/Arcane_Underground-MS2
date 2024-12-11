@@ -239,7 +239,7 @@ a{
 }
 
 
-button {
+button, .costum-btn{
     padding: 10px 20px;
     background-image: linear-gradient(144deg,#5a070753, #fafcff 50%,#5663b729);
     font-size: 18px;
@@ -252,7 +252,7 @@ button {
     
 }
 
-button:hover {
+button:hover, .costum-btn:hover {
     background-image: linear-gradient(144deg,#5a0707a3, #fafcff 50%,#5663b786);
 }
 
