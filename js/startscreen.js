@@ -75,7 +75,7 @@ function setupPlayerForm(numPlayers, startGameCallback) {
         `player${player.id}-is-bot`,
       ).checked;
 
-      console.log(isBot);
+    
 
       if (!name || !color) {
         alert(`Please fill out all details for Player ${player.id}`);

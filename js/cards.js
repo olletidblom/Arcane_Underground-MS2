@@ -60,7 +60,7 @@ export function shuffleCards(cards, c_board, c_rows, c_cols) {
       }
     }
   }
-  console.log("Cards shuffled and placed on c_board", c_board);
+ 
 
   const cardTiles = document.querySelectorAll(".c-tiles");
   cardTiles.forEach((cardTile, index) => {

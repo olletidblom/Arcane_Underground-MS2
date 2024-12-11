@@ -12,7 +12,7 @@ export function renderBoard(gameBoard, rows, cols) {
       gameBoard.appendChild(tile);
     }
   }
-  console.log("Game board rendered");
+  
 }
 
 // Render cards to cardboard

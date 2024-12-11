@@ -95,7 +95,7 @@ export function place_Card(
         selectedDOM.style.visibility = "hidden";
 
 
-        
+    
         calculateScores(gameState);
        
         // Clear the selected item

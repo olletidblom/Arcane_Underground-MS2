@@ -33,7 +33,7 @@ setupStartScreen(startGame);
 // Preload images when the window loads
 
 function startGame(players) {
-  console.log("Game starting with players:", players);
+ 
 
   // Hide setup and display the game screen
   playerSetup.style.display = "none";
