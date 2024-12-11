@@ -19,7 +19,9 @@ html, body {
     background-size: cover;
     
 }
-
+checkbox{ 
+    background-color: pink;
+}
 #logo{
     background-image: url(../images/logo/logo2.png);
     background-repeat: no-repeat;
@@ -270,6 +272,10 @@ select{
     background-color: rgba(99, 0, 0, 0.697);
     color:white; 
     height:2em; 
+}
+
+#player-setup{ 
+    background-color: rgba(0, 0, 0, 0.526);
 }
 
 .player-input{ 

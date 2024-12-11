@@ -1,0 +1,14 @@
+{
+  "esversion": 11,
+  "node": true,
+  "browser": true,
+  "globals": {
+      "console": true,
+      "window": true,
+      "document": true,
+      "alert": true
+  },
+  "undef": true,
+  "unused": true,
+  "loopfunc": true
+}
