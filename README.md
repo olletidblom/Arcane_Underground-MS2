@@ -22,8 +22,9 @@ Arcane Underground is a stategy game where to goal is to score more points than 
     2. [Site Owner Goals](#site-owner-goals)
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
-    2. [User Requrements and Expectations](#user-requrements-and-expectations)
+    2. [User Requirements and Expectations](#user-requirements-and-expectations)
     3. [User Stories](#user-stories)
+    4. [Site Owner Stories](#site-owner-stories)
 3. [Design](#design)
     1. [Design Choices](#design-choices)
     2. [Colour](#colours)
@@ -37,87 +38,83 @@ Arcane Underground is a stategy game where to goal is to score more points than 
 6. [Testing](#validation)
     1. [HTML Validation](#HTML-validation)
     2. [CSS Validation](#CSS-validation)
-    3. [Accessibility](#accessibility)
-    4. [Performance](#performance)
-    5. [Device testing](#performing-tests-on-various-devices)
-    6. [Browser compatibility](#browser-compatability)
-    7. [Testing user stories](#testing-user-stories)
+    3. [JavaScript Validation](#javascript-validation)
+    4. [Accessibility](#accessibility)
+    5. [Performance](#performance)
+    6. [Device testing](#performing-tests-on-various-devices)
+    7. [Browser compatibility](#browser-compatability)
+    8. [Testing user stories](#testing-user-stories)
 8. [Bugs](#Bugs)
 9. [Deployment](#deployment)
+    1. [EmailJS API](#emailjs-api)
 10. [Credits](#credits)
-11. [Acknowledgements](#acknowledgements)
+11. [Acknowledgments](#acknowledgments)
 
 ## Project Goals 
 
+Arcane Underground is a game based on the boardgame "Kingdoms" by Reiner Knizias, but with new visuals. 
+Its a game for 2-4 players, and can be played either with friends or alone.
+
+
 ### User Goals
- - Beeing able to play the game.
+ - Playing a fun game that is easy to learn, but hard to master.
+ - Test your skills in the game by beating bots.
 
  
-
 ### Site Owner Goals
-- Find new people to work with.
-- An easy way for people to find out what and who im working with at the moment.
-- Provide a way to show you music in a way that always get listened to..
+- Creating a fun and eyecatching game that can be played over and over again.
+- The game should be responsive and playeble on any device.
 
 ## User Experience
 
 ### Target Audience
-- Someone who wants to play a fun and strategic game with friends.
+- Both casual and advanced gamers.
+- People who likes strategic games.
 
 ### User Requrements and Expectations
-
-- Easy to use website.
-- Minimalistic design.
-- Links to everything that is described.
+- Easy to navigate website.
+- A clear "How to play" guide.
+- Links and functions that work as expected.
 - Responsivness so the site looks good no matter what device the user is useing.
 - An easy way to contact the bussines.
 
 ### User Stories
-
-#### First-time User 
-1. As a first time user, I want to quickly find the roster and their music.
-2. As a first time user, I want to find a way to contact the company.
-3. As a first time user, I want to be able to see where to company is located.
-
-
-#### Returning User
-4. As a returning user, I want to be able to read more about the roster and their story.
-5. As a returnign user, I want to send my music to the company.
-6. As a returning user, I want to find a phone number.
-7. As a returning user, I want to find the social links to the company and artists.
+1. As a user, i want to be able to choose amount of players in the game.
+2. As a user, i want to be able to choose between playing a bot or playing with friends. 
+3. As a user, i want to be able to learn how to play the game. 
+4. As a user, i want to be able to see my score and the oponents score. 
+5.  As a user, i want to see who won the game. 
 
 
 #### Site Owner 
-8. As the site owner, I want users to get to know the roster and their music better.
-9. As the site owner, I want people to send their musis so i dont have to chase people on instagram.
-10. As the site owner, I want the users to be able to contact me.
-11. As the site owner, I want people to have an easy way to get back to the page if they accedently write a wrong url (404page).
+6. As the site owner, want users to be able to contact us for feedback.
+7. As the site owner, i want players to be able to learn and progress their game logic.
 
 ## Design
 
 ### Design Choices
-The design of the website is simplistic, its easy to find everything and not to many menues to get lost in. 
-I originally had an ide for more content and visuals on the side, but after some thought i felt it was a bit to cluttery.
+The design of the game is inspired by the underground in netflixes serie "Arcane", with vibrant colours and powerful characters.
 
 ### Color
-The color scheme is very simple, with mostly black and white colors. I made it this way beacouse the company logo was black and white, and i thought it looked clean for everything else to follow in that line.
+The colors of the games are mostly based around green and purple for the overall feeling to get that arcane feeling. Other elemements and colors are used for contrast to that.
 <br>
 
 
 ### Fonts
-I used Montserrat for all fonts and sans-serif as a fallback becouse i think Montserrat makes everything looks really good.
+I used "Jaro" as font because i felt that it fitted the feeling of the game.
 
 
 ### Structure
-With the minimalistic design its easy to feel at home. You quickly find your way around with
+With the minimalistic design you quickly find your way around with
 a recogniseble interface.
-The website consists of five separate pages: 
-- A homepage with the logo of the company
-- A about page that show some information about the company
-- A roster page that shows the companys artists
-- A page for each of the artists that contains information, previews their music and links 
-  to their socials. 
-- A contact page with mail, location and a form to submit your music.
+- The website consists of one homepage with 4 diffrent views: 
+    - Startscreen that showss the logo of the game, and two choices to move to either player setup or how to play. 
+    - How to play section where you can learn how to play the game 
+    - Player setup section where you choose amount of players, then assign name, color and if player is bot or not. 
+    - Main game section where the game is played. 
+
+- A 404 page
+
 
 ### Wireframes
 
@@ -145,16 +142,19 @@ The website consists of five separate pages:
 ### Languages
 - HTML
 - CSS
+- JavaScript
 
 ### Frameworks & Tools
-- Bootstrap v5.0
 - Git
 - GitHub
 - Gitpod
 - Balsamiq
 - Google Fonts
-- Font Awsome
-- Favicon<span>.</span>io
+- JShint
+- Lighthouse
+- W3C Markup validation service
+- W3C Jigsaw CSS validation service 
+- WAVE WebAIM web accessibility evaluation tool
 
 ## Features
 The page consists of four pages, two subpages and fourteen features
@@ -451,7 +451,7 @@ The website was tested on the following browsers:
 
 
 
-## Bugs
+# # Bugs
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
