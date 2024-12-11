@@ -24,9 +24,7 @@ export function select_Castle(gameState, castleBoard, overlay, selectedDOM) {
 
       // Decrease the castle amount
       selectedCastle.amount -= 1;
-      console.log(
-        `Castle selected: ${selectedCastle.image}, Remaining: ${selectedCastle.amount}`,
-      );
+     
       // Hide the castle modal
       overlay.style.display = "none";
       castleBoard.style.display = "none";
@@ -96,17 +94,10 @@ export function place_Card(
         tile.style.backgroundImage = `url(${gameState.selected.image})`;
         selectedDOM.style.visibility = "hidden";
 
-        if (gameState.selected.amount !== undefined) {
-          console.log(
-            `${gameState.selected.amount} remaining for ${gameState.selected.image}`,
-          );
-        }
 
-        console.log(
-          `${gameState.players[gameState.currentPlayerIndex].name} placed an item.`,
-        );
+        
         calculateScores(gameState);
-        console.log(board);
+       
         // Clear the selected item
         gameState.selected = null;
 
@@ -221,8 +212,5 @@ export function calculateScores(gameState) {
     });
   }
 
-  console.log(
-    "Scores calculated:",
-    players.map((p) => ({ name: p.name, score: p.score })),
-  );
+  
 }

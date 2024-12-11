@@ -77,7 +77,7 @@ export function performBotTurn(gameState, c_board, board) {
   document.getElementById("player-round-score").innerText =
     `Score:${gameState.players[gameState.currentPlayerIndex].score}'`;
 
-  console.log(`Executing bot turn for ${currentPlayer.name}`);
+ 
 
   // Analyze the board and find priorities
   const segmentScores = calculateSegmentScores(board);
@@ -117,9 +117,7 @@ export function performBotTurn(gameState, c_board, board) {
         if (boardTile)
           boardTile.style.backgroundImage = `url(${castleToPlace.image})`;
 
-        console.log(
-          `Bot placed castle: ${castleToPlace.image} at (${targetRow}, ${targetCol})`,
-        );
+      
         gameState.selected = null; // Clear selection
         return;
       }
@@ -138,7 +136,7 @@ export function performBotTurn(gameState, c_board, board) {
     );
     if (cardTile) cardTile.style.visibility = "hidden";
 
-    console.log(`Bot randomly selected card: ${card.name} at (${row}, ${col})`);
+ 
 
     // Step 3: Use the card placement logic
     if (card.value < 0 || card.effect === "dragon") {
@@ -178,9 +176,7 @@ export function performBotTurn(gameState, c_board, board) {
         if (boardTile)
           boardTile.style.backgroundImage = `url(${gameState.selected.image})`;
 
-        console.log(
-          `Bot placed disruptive card: ${card.name} at (${targetRow}, ${targetCol})`,
-        );
+     
         calculateScores(gameState);
         gameState.selected = null; // Clear selection
         return;
@@ -206,9 +202,7 @@ export function performBotTurn(gameState, c_board, board) {
         if (boardTile)
           boardTile.style.backgroundImage = `url(${gameState.selected.image})`;
 
-        console.log(
-          `Bot placed card: ${card.name} at (${targetRow}, ${targetCol})`,
-        );
+        
 
         calculateScores(gameState);
         gameState.selected = null; // Clear selection
@@ -248,9 +242,7 @@ export function performBotTurn(gameState, c_board, board) {
         if (boardTile)
           boardTile.style.backgroundImage = `url(${lowestMultiCastle.image})`;
 
-        console.log(
-          `Bot placed fallback castle at (${target.row}, ${target.col})`,
-        );
+     
         calculateScores(gameState);
         gameState.selected = null; // Clear selection
         return;
@@ -262,6 +254,6 @@ export function performBotTurn(gameState, c_board, board) {
   document.getElementById("playerTurn").innerText =
     `${gameState.players[gameState.currentPlayerIndex].name}'s Turn`;
 
-  console.log("Bot has no valid moves. Skipping turn.");
+  
   gameState.selected = null; // Clear selection
 }
