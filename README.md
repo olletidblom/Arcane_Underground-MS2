@@ -275,9 +275,12 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 </details>
 
 ### JavaScript Validation
-JSHint Static Code Analysis Tool for JavaScript was used to validate all the Javascript files in my js folder. No issues were found.
+JSHint Static Code Analysis Tool for JavaScript was used to validate all the Javascript files in my js folder.
+I installed JSHiint thourugh npm and added my .jshintrc in my main folder.
+No issues were found.
 <details><summary>js</summary>
 <img src="assets/images/readme/validation/js/jshint.png">
+<img src="assets/images/readme/validation/js/jshintrc.png">
 </details>
  
 
