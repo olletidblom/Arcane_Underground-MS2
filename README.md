@@ -1,4 +1,4 @@
-# Project Title
+# Arcane Underground
 *Arcane-Underground*
 
 ![Mockup image](assets/images/readme/mockup/mockup.png)
@@ -422,6 +422,12 @@ In order of apearance:
 
 
 
+
 ## Credits
     All images of the project has been created by Chat GTP and edited with SIMP by the creator. 
-    
+
+
+## Acknowledgments
+I would like to take the opportunity to thank:
+- My mentor Mo Shami for his feedback, advice, guidance and support.
+- My family who helped me test the game and giving me feedback and positivity.   
