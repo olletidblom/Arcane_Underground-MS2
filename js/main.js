@@ -32,6 +32,21 @@ window.addEventListener("load", () => preloadImages(imageUrls));
 setupStartScreen(startGame);
 
 
+document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the form from being submitted
+
+  alert('Thank you for your feedback!'); // Show the alert
+
+  const modal = document.getElementById('uploadFormModal'); // Get the modal element
+  const bootstrapModal = bootstrap.Modal.getInstance(modal); // Get the Bootstrap modal instance
+
+  if (bootstrapModal) {
+      bootstrapModal.hide(); // Close the modal
+  } else {
+      console.error('Bootstrap modal instance not found.');
+  }
+});
+
 
 // Startgame Fucntion
 function startGame(players) {

@@ -239,75 +239,53 @@ The page consists of 2 pages and fourteen features
 
 ### HTML Validation
 The W3C Markup Validation Service was used to validate the HTML of the website. All pages pass with no errors no warnings to show.
-<details><summary>Home</summary>
-<img src="assets/images/html_validation/home.png">
+<details><summary>Main</summary>
+<img src="assets/images/readme/validation/html/main.png">
 </details>
-<details><summary>About</summary>
-<img src="assets/images/html_validation/about.png">
+<details><summary>404</summary>
+<img src="assets/images/readme/validation/html/404.png">
 </details>
-<details><summary>Roster</summary>
-<img src="assets/images/html_validation/roster.png">
-</details>
-<details><summary>Artists</summary>
-<img src="assets/images/html_validation/olivia.png">
-<img src="assets/images/html_validation/tuva.png">
-</details>
-<details><summary>Contact</summary>
-<img src="assets/images/html_validation/contact.png">
-</details>
+
 
 ### CSS Validation
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
 The style.css file was approved with just a few warnings.
 <details><summary>style.css</summary>
-<img src="assets/images/css_validation/css_validation.png">
+<img src="assets/images/readme/validation/css/link.png">
 </details>
 
 ### Accessibility
 The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards. All pages pass with 0 errors.
-<details><summary>Home</summary>
-<img src="assets/images/accesability_validation/home.png">
+<details><summary>Main</summary>
+<img src="assets/images/readme/validation/accessibility/main..png">
 </details>
-<details><summary>About</summary>
-<img src="assets/images/accesability_validation/about.png">
+<details><summary>404</summary>
+<img src="assets/images/readme/validation/accessibility/404.png">
 </details>
-<details><summary>Roster</summary>
-<img src="assets/images/accesability_validation/roster.png">
-</details>
-<details><summary>Artists</summary>
-<img src="assets/images/accesability_validation/olivia.png">
-<img src="assets/images/accesability_validation/tuva.png">
-</details>
-<details><summary>Contact</summary>
-<img src="assets/images/accesability_validation/contact.png">
-</details>
+
 
 ### Performance 
 Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website. 
 
-<details><summary>Home</summary>
-<img src="assets/images/lighthouse/home.png">
+<details><summary>Main</summary>
+<img src="assets/images/readme/validation/lighthouse/lighthouse.png">
 </details>
-<details><summary>About</summary>
-<img src="assets/images/lighthouse/about.png">
+<details><summary>404</summary>
+<img src="assets/images/readme/validation/lighthouse/404.png">
 </details>
-<details><summary>Roster</summary>
-<img src="assets/images/lighthouse/roster.png">
+
+### JavaScript Validation
+JSHint Static Code Analysis Tool for JavaScript was used to validate all the Javascript files in my js folder. No issues were found.
+<details><summary>js</summary>
+<img src="assets/images/readme/validation/js/jshint.png">
 </details>
-<details><summary>Artists</summary>
-<img src="assets/images/lighthouse/olivia.png">
-<img src="assets/images/lighthouse/tuva.png">
-</details>
-<details><summary>Contact</summary>
-<img src="assets/images/lighthouse/contact.png">
-</details>
+ 
 
 
 ### Browser compatability
 The website was tested on the following browsers:
 - Google Chrome
 - Safari
-- Mozilla
 
 ### Testing user stories
 
@@ -440,9 +418,10 @@ You can clone the repository by following these steps:
 
 ### Code
 In order of apearance:
-- The HTML for the responsive [Navbar](https://getbootstrap.com/docs/5.0/components/navbar/#toggler) was taken from the Bootstrap v5.0 documentation code snippet.
-- [Carousel](https://getbootstrap.com/docs/5.0/components/carousel/#with-indicators) on Roster page was taken from Bootrap v5.0 documentation code snippet and adjusted to fit for spotify.
-- Nearly everything is built with rows and columns from BootStrap.
+- The HTML for the responsive [Contact Form](https://getbootstrap.com/docs/4.3/components/forms/) was taken from the Bootstrap v5.0 documentation code snippet.
+
+
 
 ## Credits
-    All the media on this webpage has leaglly been provided by the company Wood Music.
+    All images of the project has been created by Chat GTP and edited with SIMP by the creator. 
+    

@@ -6,7 +6,8 @@
       "console": true,
       "window": true,
       "document": true,
-      "alert": true
+      "alert": true,
+      "bootstrap": true
   },
   "undef": true,
   "unused": true,
